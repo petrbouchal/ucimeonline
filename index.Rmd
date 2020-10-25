@@ -1,0 +1,35 @@
+---
+title: "index"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(gargle)
+library(sodium)
+library(googlesheets4)
+library(tidyverse)
+library(janitor)
+```
+
+## Google sheets via Gargle auth
+
+```{r}
+raw <- readBin("secret/sheets.json", "raw", file.size("secret/sheets.json"))
+pth <- sodium::data_decrypt(bin = raw,
+                     key = sodium::sha256(charToRaw(Sys.getenv("UO_SHEETS_PASSWORD"))),
+                     nonce = gargle:::secret_nonce())
+
+googlesheets4::gs4_auth(email = "pbouchal@gmail.com", path = rawToChar(pth))
+dns <- googlesheets4::read_sheet("1ohis0XYklKjIdhbdh1Ca_0qKy-etXQhw1EiEXFfBAdI",
+                                 col_types = "c---------cciicccc") %>%
+  rename(redizo = RED_IZO) %>%
+  clean_names()
+```
+
+```{r}
+dns
+```
+
+
