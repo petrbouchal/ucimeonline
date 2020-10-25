@@ -44,10 +44,6 @@ jobs:
           if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
           renv::restore()
 
-      - name: Install rmarkdown
-        run: |
-          R -e 'install.packages('rmarkdown')'
-
       - name: Build site
         env:
           UO_SHEETS_PASSWORD: ${{ secrets.UO_SHEETS_PASSWORD }}
