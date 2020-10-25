@@ -1,7 +1,7 @@
 name: Učíme online pipeline
 output_dir: docs
 include: ["demo.R"]
-exclude: ["LICENSE.md", "*.csv", "*.rds", "renv", "renv.lock"]
+exclude: ["LICENSE.md", "*.csv", "*.rds", "renv", "renv.lock", "keys"]
 navbar:
   title: "Učíme online"
   right:
