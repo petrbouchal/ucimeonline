@@ -1,0 +1,18 @@
+name: Učíme online pipeline
+output_dir: docs
+include: ["demo.R"]
+exclude: ["LICENSE.md", "*.csv", "*.rds", "renv", "renv.lock"]
+navbar:
+  title: "Učíme online"
+  right:
+  - icon: fa-github fa-lg
+    href: https://github.com/petrbouchal/ucimeonline
+  - icon: fa-asterisk fa-lg
+    href: https://petrbouchal.github.io
+output:
+  html_document:
+#    css: extra.css
+    toc: false
+    toc_float: false
+    mathjax: null
+    df_print: paged
