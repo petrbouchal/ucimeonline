@@ -16,7 +16,7 @@ library(janitor)
 ## Google sheets via Gargle auth
 
 ```{r}
-raw <- readBin("secret/sheets.json", "raw", file.size("secret/sheets.json"))
+raw <- readBin("keys/sheets.json", "raw", file.size("keys/sheets.json"))
 pth <- sodium::data_decrypt(bin = raw,
                      key = sodium::sha256(charToRaw(Sys.getenv("UO_SHEETS_PASSWORD"))),
                      nonce = gargle:::secret_nonce())
