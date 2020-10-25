@@ -32,4 +32,4 @@ dns <- googlesheets4::read_sheet("1ohis0XYklKjIdhbdh1Ca_0qKy-etXQhw1EiEXFfBAdI",
 dns
 ```
 
-
+TODO: test BigQuery via Gargle auth
