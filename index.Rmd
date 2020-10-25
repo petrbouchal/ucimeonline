@@ -33,3 +33,38 @@ dns
 ```
 
 TODO: test BigQuery via Gargle auth
+
+```{r}
+raw <- readBin("keys/bq.json", "raw", file.size("keys/bq.json"))
+pth <- sodium::data_decrypt(bin = raw,
+                     key = sodium::sha256(charToRaw(Sys.getenv("UO_BQ_PASSWORD"))),
+                     nonce = gargle:::secret_nonce())
+
+library(bigrquery)
+
+bq_auth(email = "pbouchal@gmail.com", path = rawToChar(pth))
+
+prjname <- "ucimeonline"
+dsname <- "technologickamapa"
+bqc <- dbConnect(
+  bigrquery::bigquery(),
+  project = prjname,
+  dataset = dsname,
+  billing = prjname
+)
+```
+
+
+```{r}
+
+
+try(bigrquery::bq_table_delete(bq_table(prjname, dsname, "iris")))
+bigrquery::bq_table_upload(bq_table("ucimeonline", "technologickamapa", "mtcars"),
+                           values = mtcars)
+```
+
+```{r}
+tbl(bqc, "mtcars")
+```
+
+
