@@ -1,6 +1,6 @@
 on:
   push:
-    branches: src
+    branches: master
 
 name: build-and-render
 
