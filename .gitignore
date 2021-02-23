@@ -1,3 +1,7 @@
 .Rproj.user
 .Rhistory
 .RData
+strukturovane-CSV
+docs
+data-processed
+data-input/*.xml
