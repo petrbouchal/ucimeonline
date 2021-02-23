@@ -9,6 +9,10 @@ auth_google <- function(key_json_path, pw_var_name, google_fn, email) {
   google_fn(email = email, path = rawToChar(pth))
 }
 
+# https://gargle.r-lib.org/articles/get-api-credentials.html
+# https://gargle.r-lib.org/articles/articles/managing-tokens-securely.html
+# https://gargle.r-lib.org/articles/articles/managing-tokens-securely.html
+
 auth_encrypt <- function(input, output, pw_var_name) {
   input <- readBin(input, "raw",
                    file.size(input))
@@ -17,4 +21,9 @@ auth_encrypt <- function(input, output, pw_var_name) {
                               nonce = gargle:::secret_nonce())
   attr(enc, "nonce") <- NULL
   writeBin(enc, output)
+}
+
+write_parquet_pth <- function(dt, path) {
+  arrow::write_parquet(dt, path)
+  return(path)
 }
