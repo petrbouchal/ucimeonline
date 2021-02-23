@@ -17,14 +17,6 @@ jobs:
       - name: Setup R
         uses: r-lib/actions/setup-r@master
 
-      - name: Install XQuartz on MacOS
-        if: runner.os == 'macOS'
-        run: brew cask install xquartz
-
-      - name: Install cairo
-        if: runner.os == 'macOS'
-        run: brew install cairo
-
       - name: Install pandoc and pandoc citeproc
         run: |
           brew install pandoc
