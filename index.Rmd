@@ -7,21 +7,23 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 
 library(gargle)
+library(DBI)
 library(sodium)
 library(googlesheets4)
 library(tidyverse)
 library(janitor)
+
+library(bigrquery)
+
+source("R/utils.R")
 ```
 
 ## Google sheets via Gargle auth
 
 ```{r}
-raw <- readBin("keys/sheets.json", "raw", file.size("keys/sheets.json"))
-pth <- sodium::data_decrypt(bin = raw,
-                     key = sodium::sha256(charToRaw(Sys.getenv("UO_SHEETS_PASSWORD"))),
-                     nonce = gargle:::secret_nonce())
+auth_google("keys/sheets.json", "UO_SHEETS_PASSWORD", 
+            googlesheets4::gs4_auth, "pbouchal@gmail.com")
 
-googlesheets4::gs4_auth(email = "pbouchal@gmail.com", path = rawToChar(pth))
 dns <- googlesheets4::read_sheet("1ohis0XYklKjIdhbdh1Ca_0qKy-etXQhw1EiEXFfBAdI",
                                  col_types = "c---------cciicccc") %>%
   rename(redizo = RED_IZO) %>%
@@ -32,20 +34,15 @@ dns <- googlesheets4::read_sheet("1ohis0XYklKjIdhbdh1Ca_0qKy-etXQhw1EiEXFfBAdI",
 dns
 ```
 
-TODO: test BigQuery via Gargle auth
+## Test BigQuery via Gargle auth
 
 ```{r}
-raw <- readBin("keys/bq.json", "raw", file.size("keys/bq.json"))
-pth <- sodium::data_decrypt(bin = raw,
-                     key = sodium::sha256(charToRaw(Sys.getenv("UO_BQ_PASSWORD"))),
-                     nonce = gargle:::secret_nonce())
-
-library(bigrquery)
-
-bq_auth(email = "pbouchal@gmail.com", path = rawToChar(pth))
+auth_google("keys/bq.json", "UO_BQ_PASSWORD", 
+            bigrquery::bq_auth, "pbouchal@gmail.com")
 
 prjname <- "ucimeonline"
 dsname <- "technologickamapa"
+
 bqc <- dbConnect(
   bigrquery::bigquery(),
   project = prjname,

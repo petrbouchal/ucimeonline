@@ -47,6 +47,7 @@ jobs:
       - name: Build site
         env:
           UO_SHEETS_PASSWORD: ${{ secrets.UO_SHEETS_PASSWORD }}
+          UO_BQ_PASSWORD: ${{ secrets.UO_BQ_PASSWORD }}
         run: |
           R -e 'rmarkdown::render_site()'
 
