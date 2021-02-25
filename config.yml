@@ -1,0 +1,13 @@
+default:
+  tech_sheet_id: "1ohis0XYklKjIdhbdh1Ca_0qKy-etXQhw1EiEXFfBAdI"
+  secret_name_gsheets: "UO_SHEETS_PASSWORD"
+  secret_name_bigquery: "UO_BQ_PASSWORD"
+  secret_path_gsheets: "keys/sheets.json"
+  secret_path_bigquery: "keys/bq.json"
+  email_bigquery: pbouchal@gmail.com
+  email_gsheets: pbouchal@gmail.com
+  bq_project: ucimeonline
+  bq_billing: ucimeonline
+  bq_dataset: technologickamapa
+  bq_table_dns: dns
+

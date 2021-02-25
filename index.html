@@ -306,8 +306,9 @@ bqc &lt;- dbConnect(
   dataset = dsname,
   billing = prjname
 )</code></pre>
-<pre class="r"><code>try(bigrquery::bq_table_delete(bq_table(prjname, dsname, &quot;mtcars&quot;)))
-bigrquery::bq_table_upload(bq_table(&quot;ucimeonline&quot;, &quot;technologickamapa&quot;, &quot;mtcars&quot;),
+<pre class="r"><code>try(bigrquery::bq_table_delete(bq_table(prjname, dsname, &quot;mtcars&quot;)))</code></pre>
+<pre><code>## Error : Not found: Table ucimeonline:technologickamapa.mtcars [notFound]</code></pre>
+<pre class="r"><code>bigrquery::bq_table_upload(bq_table(&quot;ucimeonline&quot;, &quot;technologickamapa&quot;, &quot;mtcars&quot;),
                            values = mtcars)</code></pre>
 <pre class="r"><code>tbl(bqc, &quot;mtcars&quot;)</code></pre>
 <div data-pagedtable="false">
