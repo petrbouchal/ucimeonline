@@ -1,8 +1,7 @@
+Data analytický pipeline pro Učíme online
+================
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-# Data analytický pipeline pro Učíme online
-
 <!-- badges: start -->
 <!-- badges: end -->
 

@@ -1,4 +1,5 @@
 ---
+title: Data analytický pipeline pro Učíme online
 output: github_document
 ---
 
@@ -10,8 +11,6 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
-
-# Data analytický pipeline pro Učíme online
 
 <!-- badges: start -->
 <!-- badges: end -->
