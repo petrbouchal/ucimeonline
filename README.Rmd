@@ -18,11 +18,10 @@ knitr::opts_chunk$set(
 ```{r}
 ```
 
-Tento repozitář obsahuje kód s pipelinem, který integruje (meta)data o českých školách a napojuje je na databázi škol podpořených v projektu Česko.digital [Učíme online](https://www.ucimeonline.cz/).
-
+> Tento repozitář obsahuje kód s pipelinem, který integruje (meta)data o českých školách a napojuje je na databázi škol podpořených v projektu Česko.digital [Učíme online](https://www.ucimeonline.cz/).  
 Výsledný dataset umožňuje snadnou geolokaci a analýzu podpořených škol s ohledem na využíváné technologie a technickou podporu, to vše v kontextu ostatních škol i základních údajů o nich a jejich obcích.
 
-Technicky jde o {targets} pipeline v R, což umožňuje efektivnivní workflow a la `make`. Kód je stavěn tak, aby neopakoval již proběhlé kroky, běžěl automaticky a šel spustit i na jiném stroji (díky {renv}).
+Technicky jde o {[targets](docs.ropensci.org/targets/)} pipeline v R, což umožňuje efektivnivní workflow a la `make`. Kód je stavěn tak, aby neopakoval již proběhlé kroky, běžel automaticky a šel od začátku do konce spustit i na jiném stroji (díky {[renv](https://rstudio.github.io/renv/)}, který se stará o replikaci prostředí, ale je potřeba mít přístupové klíče do API Googlu a Airtable a práva ke zdrojovým Google sheets a Airtable bázi).
 
 Detailnější technická a datová dokumentace je v přípravě.
 
@@ -56,7 +55,7 @@ Detailnější dokumentace výstupního datasetu je v přípravě.
 - racionalizovat názvy sloupců
 - detekce/rating kvality napojení na registr
 
-### Šířejí
+### Šířeji
 
 - re-scan DNS (via shell + `dig` nebo rovnou jedním z [Rkových nástrojů na sběr a analýzu síťových dat](https://rud.is/b/r-cyber/))
 

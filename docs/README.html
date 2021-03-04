@@ -281,9 +281,11 @@ $(document).ready(function () {
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->
 <!-- badges: end -->
-<p>Tento repozitář obsahuje kód s pipelinem, který integruje (meta)data o českých školách a napojuje je na databázi škol podpořených v projektu Česko.digital <a href="https://www.ucimeonline.cz/">Učíme online</a>.</p>
-<p>Výsledný dataset umožňuje snadnou geolokaci a analýzu podpořených škol s ohledem na využíváné technologie a technickou podporu, to vše v kontextu ostatních škol i základních údajů o nich a jejich obcích.</p>
-<p>Technicky jde o {targets} pipeline v R, což umožňuje efektivnivní workflow a la <code>make</code>. Kód je stavěn tak, aby neopakoval již proběhlé kroky, běžěl automaticky a šel spustit i na jiném stroji (díky {renv}).</p>
+<blockquote>
+<p>Tento repozitář obsahuje kód s pipelinem, který integruje (meta)data o českých školách a napojuje je na databázi škol podpořených v projektu Česko.digital <a href="https://www.ucimeonline.cz/">Učíme online</a>.<br />
+Výsledný dataset umožňuje snadnou geolokaci a analýzu podpořených škol s ohledem na využíváné technologie a technickou podporu, to vše v kontextu ostatních škol i základních údajů o nich a jejich obcích.</p>
+</blockquote>
+<p>Technicky jde o {<a href="docs.ropensci.org/targets/">targets</a>} pipeline v R, což umožňuje efektivnivní workflow a la <code>make</code>. Kód je stavěn tak, aby neopakoval již proběhlé kroky, běžel automaticky a šel od začátku do konce spustit i na jiném stroji (díky {<a href="https://rstudio.github.io/renv/">renv</a>}, který se stará o replikaci prostředí, ale je potřeba mít přístupové klíče do API Googlu a Airtable a práva ke zdrojovým Google sheets a Airtable bázi).</p>
 <p>Detailnější technická a datová dokumentace je v přípravě.</p>
 <div id="výstup" class="section level2">
 <h2>Výstup</h2>
@@ -320,8 +322,8 @@ $(document).ready(function () {
 <li>detekce/rating kvality napojení na registr</li>
 </ul>
 </div>
-<div id="šířejí" class="section level3">
-<h3>Šířejí</h3>
+<div id="šířeji" class="section level3">
+<h3>Šířeji</h3>
 <ul>
 <li>re-scan DNS (via shell + <code>dig</code> nebo rovnou jedním z <a href="https://rud.is/b/r-cyber/">Rkových nástrojů na sběr a analýzu síťových dat</a>)</li>
 </ul>
