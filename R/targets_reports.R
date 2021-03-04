@@ -11,13 +11,13 @@ t_reports <- list(
     rmarkdown::render_site("index.Rmd")
     "docs/index.html"}),
 
-  tar_file(rmd_doc, "doc.Rmd"),
-  tar_file(html_doc, command = {!! tar_knitr_deps_expr("doc.Rmd")
+  tar_file(rmd_doc, "README.Rmd"),
+  tar_file(html_doc, command = {!! tar_knitr_deps_expr("README.Rmd")
     rmd_doc
     siteconf
     sitefiles
-    rmarkdown::render_site("doc.Rmd")
-    "docs/doc.html"}),
+    rmarkdown::render_site("README.Rmd")
+    "docs/README.html"}),
 
   tar_file(rmd_codebook, "codebook.Rmd"),
   tar_file(html_codebook, command = {!! tar_knitr_deps_expr("index.Rmd")
