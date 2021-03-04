@@ -30,11 +30,11 @@
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteRepo": "CzechData",
       "RemoteUsername": "JanCaha",
-      "RemoteRef": "HEAD",
+      "RemoteRepo": "CzechData",
+      "RemoteRef": "master",
       "RemoteSha": "a4b990e0f8f8b8d0a5febe0be1029f114a73415b",
-      "Hash": "2fe1c37b543b5d583f584664f02868f6"
+      "Hash": "47a9764437c9c4fa863700d90c7ccebb"
     },
     "DBI": {
       "Package": "DBI",
@@ -92,12 +92,26 @@
       "Repository": "CRAN",
       "Hash": "cf29e1b71f8736960e0e851123a83e6f"
     },
+    "RCzechia": {
+      "Package": "RCzechia",
+      "Version": "1.6.6",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "95b98217e388c06d1cbf4d5b44732afe"
+    },
     "Rcpp": {
       "Package": "Rcpp",
       "Version": "1.0.6",
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "dbb5e436998a7eba5a9d682060533338"
+    },
+    "RcppEigen": {
+      "Package": "RcppEigen",
+      "Version": "0.3.3.9.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "ddfa72a87fdf4c80466a20818be91d00"
     },
     "RefManageR": {
       "Package": "RefManageR",
@@ -112,6 +126,18 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "8c4137a9ab70de4787d57758f8190617"
+    },
+    "airtabler": {
+      "Package": "airtabler",
+      "Version": "0.1.6",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "bergant",
+      "RemoteRepo": "airtabler",
+      "RemoteRef": "master",
+      "RemoteSha": "c53967962a97396dc738fa14e3aa0537c4bc4dac",
+      "Hash": "3fd0bfd8d89b20e1937e56fb4d09aae4"
     },
     "arrow": {
       "Package": "arrow",
@@ -176,6 +202,13 @@
       "Repository": "CRAN",
       "Hash": "0b118d5900596bae6c4d4865374536a6"
     },
+    "blastula": {
+      "Package": "blastula",
+      "Version": "0.3.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "1f45952e8aadddb043afb988b988dd52"
+    },
     "blob": {
       "Package": "blob",
       "Version": "1.2.1",
@@ -189,6 +222,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "92a5f887f9ae3035ac7afde22ba73ee9"
+    },
+    "brio": {
+      "Package": "brio",
+      "Version": "1.1.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "36758510e65a457efeefa50e1e7f0576"
     },
     "broom": {
       "Package": "broom",
@@ -206,10 +246,10 @@
     },
     "callr": {
       "Package": "callr",
-      "Version": "3.4.4",
+      "Version": "3.5.1",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "e56fe17ffeddfdcfcef40981e41e1c40"
+      "Hash": "b7d7f1e926dfcd57c74ce93f5c048e80"
     },
     "cellranger": {
       "Package": "cellranger",
@@ -217,6 +257,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "f61dbaec772ccd2e17705c1e872e9e7c"
+    },
+    "checkmate": {
+      "Package": "checkmate",
+      "Version": "2.0.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "a667800d5f0350371bedeb8b8b950289"
     },
     "ckanr": {
       "Package": "ckanr",
@@ -288,13 +335,6 @@
       "Repository": "CRAN",
       "Hash": "31d77b09f63550cee9ecb5a08bf76e8f"
     },
-    "conflr": {
-      "Package": "conflr",
-      "Version": "0.1.1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "547db318154e6e4e824aa8618614d9fb"
-    },
     "countrycode": {
       "Package": "countrycode",
       "Version": "1.2.0",
@@ -353,10 +393,15 @@
     },
     "czso": {
       "Package": "czso",
-      "Version": "0.3.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "7ffa48a87d813dc81f0f2567128a956b"
+      "Version": "0.3.2.9000",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "petrbouchal",
+      "RemoteRepo": "czso",
+      "RemoteRef": "master",
+      "RemoteSha": "7bdf8b7a260f19e3265f8602c233bf6b327299cb",
+      "Hash": "1c679b9423353c3987c4ed522ce27714"
     },
     "data.table": {
       "Package": "data.table",
@@ -385,6 +430,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "415656f50722f5b6e6bcf80855ce11b9"
+    },
+    "diffobj": {
+      "Package": "diffobj",
+      "Version": "0.3.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "55fae7ec1418d2a47bd552571673d1af"
     },
     "digest": {
       "Package": "digest",
@@ -533,6 +585,20 @@
       "Repository": "CRAN",
       "Hash": "dcbfac00cf60125f43791a135ef68285"
     },
+    "getPass": {
+      "Package": "getPass",
+      "Version": "0.2-2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "07a91f99e56951818ab911366db77700"
+    },
+    "ggforce": {
+      "Package": "ggforce",
+      "Version": "0.3.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "4adaf6b01b41f243ba0c62801de3331e"
+    },
     "ggplot2": {
       "Package": "ggplot2",
       "Version": "3.3.2.9000",
@@ -633,6 +699,13 @@
       "Repository": "CRAN",
       "Hash": "3ad82bf883067612096bda752dbd513e"
     },
+    "gt": {
+      "Package": "gt",
+      "Version": "0.2.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "4eb28493ed31ff8f5f240d0fb5929ecb"
+    },
     "gtable": {
       "Package": "gtable",
       "Version": "0.3.0",
@@ -695,13 +768,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "13641a1c6d2cc98801b76764078e17ea"
-    },
-    "httpuv": {
-      "Package": "httpuv",
-      "Version": "1.5.4",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "4e6dabb220b006ccdc3b3b5ff993b205"
     },
     "httr": {
       "Package": "httr",
@@ -843,12 +909,24 @@
       "Repository": "CRAN",
       "Hash": "0bde42ee282efb18c7c4e63822f5b4f7"
     },
+    "log4r": {
+      "Package": "log4r",
+      "Version": "0.3.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "5ce4d2c11689134403962d6229395314"
+    },
     "lubridate": {
       "Package": "lubridate",
       "Version": "1.7.9.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "5b5b02f621d39a499def7923a5aee746"
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "lubridate",
+      "RemoteUsername": "tidyverse",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "aab2e30a07f870f5e0c36ad119b1b2df656e926a",
+      "Hash": "8d0e65f04ff73e8e7162da59ee07ed03"
     },
     "magrittr": {
       "Package": "magrittr",
@@ -891,13 +969,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "26fa77e707223e1ce042b2b5d09993dc"
-    },
-    "miniUI": {
-      "Package": "miniUI",
-      "Version": "0.1.1.1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "fec5f52652d60615fdb3957b3d74324a"
     },
     "modelr": {
       "Package": "modelr",
@@ -990,6 +1061,20 @@
       "Repository": "CRAN",
       "Hash": "03b7076c234cb3331288919983326c55"
     },
+    "pointblank": {
+      "Package": "pointblank",
+      "Version": "0.6.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "51055d2aa1b19ad633162a8066c34e09"
+    },
+    "polyclip": {
+      "Package": "polyclip",
+      "Version": "1.10-0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "cb167f328b3ada4ec5cf67a7df4c900a"
+    },
     "praise": {
       "Package": "praise",
       "Version": "1.0.0",
@@ -1057,11 +1142,11 @@
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteRepo": "purrrow",
       "RemoteUsername": "petrbouchal",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "0059bcaa4ff1a39fa458bb12c4953cc7b48dfeb6",
-      "Hash": "2e37b0f20d74ed930c776ced1b54c692"
+      "RemoteRepo": "purrrow",
+      "RemoteRef": "main",
+      "RemoteSha": "6bf3d0930ae397c0739dbf04c486ab62efcde725",
+      "Hash": "592344d34ad2891a33c775136b4fb5d2"
     },
     "rapidjsonr": {
       "Package": "rapidjsonr",
@@ -1128,10 +1213,10 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "0.12.0",
+      "Version": "0.13.0",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "7340c71f46a0fd16506cfa804e224e44"
+      "Hash": "9f10d9db5b50400c348920c5c603385e"
     },
     "reprex": {
       "Package": "reprex",
@@ -1208,6 +1293,20 @@
       "RemoteSha": "3daf2dc8a2424c2d7fa5eaa2e79760e0cc7a1832",
       "Hash": "6bfbb22c9f93b3de64efc5f7929b5bd6"
     },
+    "santoku": {
+      "Package": "santoku",
+      "Version": "0.5.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "2bf3003f95a95636dd7bd66d2cafd7aa"
+    },
+    "sass": {
+      "Package": "sass",
+      "Version": "0.3.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "3ef1adfe46b7b144b970d74ce33ab0d6"
+    },
     "satellite": {
       "Package": "satellite",
       "Version": "1.0.2",
@@ -1255,13 +1354,6 @@
       "Repository": "CRAN",
       "Hash": "d69b3f4a19888552509cebe2d116afde"
     },
-    "shiny": {
-      "Package": "shiny",
-      "Version": "1.5.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "ee4ed72d7a5047d9e73cf922ad66e9c9"
-    },
     "snakecase": {
       "Package": "snakecase",
       "Version": "0.11.0",
@@ -1276,13 +1368,6 @@
       "Repository": "CRAN",
       "Hash": "9f07fda8802e9a2ed7e91f20f2d814ce"
     },
-    "sourcetools": {
-      "Package": "sourcetools",
-      "Version": "0.1.7",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "947e4e02a79effa5d512473e10f41797"
-    },
     "sp": {
       "Package": "sp",
       "Version": "1.4-5",
@@ -1296,6 +1381,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "ff487b68b6e9c884bd7324cc217b1de1"
+    },
+    "stringdist": {
+      "Package": "stringdist",
+      "Version": "0.9.6.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "1ab14e88df14b856dd4d2e34a80c0ba6"
     },
     "stringi": {
       "Package": "stringi",
@@ -1348,10 +1440,10 @@
     },
     "testthat": {
       "Package": "testthat",
-      "Version": "2.3.2",
+      "Version": "3.0.2",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "0829b987b8961fb07f3b1b64a2fbc495"
+      "Hash": "495e0434d9305716b6a87031570ce109"
     },
     "tibble": {
       "Package": "tibble",
@@ -1359,6 +1451,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "9c6c10e594f32096ede0c7d373ccbddd"
+    },
+    "tidygeocoder": {
+      "Package": "tidygeocoder",
+      "Version": "1.0.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "1f94d0899e4bb794eb1357c42b9b23d6"
     },
     "tidyr": {
       "Package": "tidyr",
@@ -1394,6 +1493,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "847a9d113b78baca4a9a8639609ea228"
+    },
+    "tweenr": {
+      "Package": "tweenr",
+      "Version": "1.0.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "fc77eb5297507cccfa3349a606061030"
     },
     "units": {
       "Package": "units",
@@ -1460,15 +1566,22 @@
     },
     "vsezved": {
       "Package": "vsezved",
-      "Version": "0.1.0",
+      "Version": "0.1.0.9000",
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteUsername": "petrbouchal",
       "RemoteRepo": "vsezved",
       "RemoteRef": "master",
-      "RemoteSha": "aba7c02de669b6a977a30b77b29efaeb81b77a98",
-      "Hash": "3863da14153f2b248a288841516d279d"
+      "RemoteSha": "d775243db9ef822dcf6cae22ad61fcf2f15c89f9",
+      "Hash": "a59baf0c6383d428bc0eb558585e4ba1"
+    },
+    "waldo": {
+      "Package": "waldo",
+      "Version": "0.2.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "29df52c781e572c967f90de9713423c4"
     },
     "webshot": {
       "Package": "webshot",
@@ -1518,13 +1631,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "6c85f015dee9cc7710ddd20f86881f58"
-    },
-    "xtable": {
-      "Package": "xtable",
-      "Version": "1.8-4",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "b8acdf8af494d9ec19ccb2481a9b11c2"
     },
     "yaml": {
       "Package": "yaml",

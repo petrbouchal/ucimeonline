@@ -2,6 +2,7 @@
 .Rhistory
 .RData
 strukturovane-CSV
-docs
 data-processed
+!data-processed/.here
 data-input/*.xml
+!data-input/.here

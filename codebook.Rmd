@@ -1,0 +1,12 @@
+---
+title: "Dokumentace datového výstupu"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+source("_packages.R")
+```
+

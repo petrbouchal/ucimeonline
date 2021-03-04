@@ -1,0 +1,12 @@
+---
+title: "Technická dokumentace"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+tar_visnetwork()
+```
+

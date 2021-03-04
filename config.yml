@@ -1,13 +1,47 @@
 default:
   tech_sheet_id: "1ohis0XYklKjIdhbdh1Ca_0qKy-etXQhw1EiEXFfBAdI"
+
+  output_sheet_id: "1WKZrK3MCzsNpcG1lCq7gV0s56z-2wcKeq4IWDaCO9ws"
+  output_sheet_tabname_base: "base_data_with_airtable_marker"
+  output_sheet_tabname_compiled: "airtable_with_base"
+
+  manualni_id_sheet_id: "1LcLMopcRXzbSR20f0ldGk27au5TGOTTzyxqD15eWlIg"
+  manualni_id_tabname_missingids: unmatched
+  manualni_id_tabname_manualids: manualni_doplneni
+
+  airtable_base_id: "appE3bg248O9wK2aM"
+  airtable_table_id: "tech. pomoc skoly"
   secret_name_gsheets: "UO_SHEETS_PASSWORD"
   secret_name_bigquery: "UO_BQ_PASSWORD"
-  secret_path_gsheets: "keys/sheets.json"
+  secret_path_gsheets: "keys/sheets2.json"
   secret_path_bigquery: "keys/bq.json"
+
   email_bigquery: pbouchal@gmail.com
-  email_gsheets: pbouchal@gmail.com
+  email_gsheets: "uo-779@ucimeonline.iam.gserviceaccount.com"
+
   bq_project: ucimeonline
   bq_billing: ucimeonline
   bq_dataset: technologickamapa
+
+  sch_typy: [B00, C00, E00, J12, D00, F10, G11] # kody typů škol, které chceme zahrnout
+  sch_typy_nazvy: ["Základní škola", "Střední škola", "Vyšší odborná škola",
+    "Dětský domov se školou", "Konzervatoř", "Základní umělecká škola",
+    "Dům dětí a mládeže"]
+
+  sch_reg_update_days: 7 # redownload school register data every N days (can be decimal). Set to -1 to always update
+  sch_adr_update_days: 7 # redownload school directory data every N days (can be decimal). Set to -1 to always update
+
+  airtable_update_days: 1 # redownload airtable data every N days (must be integer). Set to -1 to always update
+
   bq_table_dns: dns
 
+  cuzk_date: 20200930 # datum dumpu adresních dat, YYYYMMDD
+
+  csi_excel_zs: "data-input/ZŠ podle priority_data.xlsx"
+  csi_excel_ss: "data-input/SŠ podle priority_data.xlsx"
+
+  mpo_xlsx: "data-input/Školy - pokrytí 2019 - final ZD.xlsx"
+
+  stats_rok: 2019
+  kapacita_breaks: [0, 100, 200, 600, 800, 1000, 2000]
+  obce_pocob_breaks: [200, 500, 1000, 10000, 20000, 50000, 100000, 1000000]

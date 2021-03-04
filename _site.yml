@@ -1,17 +1,17 @@
 name: Učíme online pipeline
 output_dir: docs
 include: ["demo.R"]
-exclude: ["LICENSE.md", "*.csv", "*.rds", "renv", "renv.lock", "keys", "R"]
+exclude: ["LICENSE.md", "*.csv", "*.rds", "renv", "renv.lock", "keys", "R", "config.yml", "data-*", "SAS"]
 navbar:
   title: "Učíme online"
   right:
-  - icon: fa-github fa-lg
+  - icon: fab fa-github fa-lg
     href: https://github.com/petrbouchal/ucimeonline
-  - icon: fa-asterisk fa-lg
-    href: https://petrbouchal.github.io
+  - icon: fas fa-asterisk fa-lg
+    href: https://petrbouchal.xyz
 output:
   html_document:
-    css: extra.css
+    css: sitefiles/extra.css
     toc: false
     toc_float: false
     mathjax: null
