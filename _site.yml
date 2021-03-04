@@ -4,6 +4,9 @@ include: ["demo.R"]
 exclude: ["LICENSE.md", "*.csv", "*.rds", "renv", "renv.lock", "keys", "R", "config.yml", "data-*", "SAS"]
 navbar:
   title: "Učíme online"
+  left:
+  - text: Dokumentace
+    href: doc.html
   right:
   - icon: fab fa-github fa-lg
     href: https://github.com/petrbouchal/ucimeonline
