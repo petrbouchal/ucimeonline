@@ -57,3 +57,25 @@ flatten_data <- function(df, column) {
                                           paste0(.x, collapse = "; "),
                                           NA)))
 }
+
+g_resource_attribute <- function(id, attribute_name = "modifiedTime") {
+  g_thing_metadata <- drive_get(id = id)
+  g_thing_metadata[['drive_resource']][[attribute_name]]
+}
+
+gdrive_modified <- function(id) {
+  g_resource_attribute(id)
+}
+
+read_sheet_ifold <- function(sheet_id, sheet_name = NULL, sheet_modified_date, ...) {
+  googlesheets4::read_sheet(sheet_id, sheet = sheet_name, ...)
+}
+
+timestamp_outdated <- function(path, days_old) {
+  if(file.exists(path)) {
+    timestamp <- read_csv(path, col_types = cols(x = col_datetime()))[[1,"x"]]
+    timestamp < (Sys.time() - days_old * 24 * 3600)
+  } else {
+    TRUE
+  }
+}
