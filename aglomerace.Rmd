@@ -1,0 +1,119 @@
+---
+title: "Hranice: různé definice Prahy"
+output: html_document
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r setup}
+library(readxl)
+library(stringr)
+library(dplyr)
+library(sf)
+library(ggplot2)
+```
+
+```{r}
+# https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/urban-audit
+
+ua_url <- "https://ec.europa.eu/eurostat/cache/GISCO/geodatafiles/URAU_2018.zip"
+# tf <- tempfile()
+# td <- tempdir()
+download.file(ua_url, destfile = "data-input/ua.zip")
+unzip("data-input/ua.zip", exdir = "data-input")
+uaf <- fs::dir_ls(here::here("data-input/"), glob = "*Urban_audit_2018.shp")
+st_layers(uaf)
+```
+
+```{r}
+ua <- read_sf(uaf) %>% st_transform(5514)
+```
+
+```{r}
+ua %>% 
+  filter(CNTR_CODE == "CZ")
+```
+
+
+
+```{r, eval=F}
+system("cd data-input;ogr2ogr -f GPKG ua.gpkg Urban_audit_2018.shp")
+```
+
+```{bash, eval=F}
+pwd
+cd data-input
+ogr2ogr -f GPKG ua.gpkg Urban_audit_2018.shp
+```
+
+
+
+
+```{r, eval=F}
+ua <- st_read("~/Downloads/URAU_2018/ua.gpkg") %>% # Urban audit
+  st_transform(5514)
+
+ua <- st_read()
+```
+
+```{r}
+td <- tempdir()
+tf <- tempfile()
+download.file("https://www.oecd.org/cfe/regionaldevelopment/Czech%20Republic.zip", 
+              destfile = tf)
+oecd_unzipped <- unzip(tf, exdir = td)
+oecd_pth <- fs::dir_ls(td, glob = "*epublic.shp")
+oecd_pth_core <- fs::dir_ls(td, glob = "*epublic_core.shp")
+
+ua_cz <- st_read(oecd_pth) %>% # OECD
+  st_transform(5514)
+plot(ua_cz, max.plot = 1)
+ua_cz_core <- st_read(oecd_pth_core) %>% # OECD
+  st_transform(5514)
+plot(ua_cz_core, max.plot = 1)
+
+ua %>%
+  filter(CNTR_ID == "CZ") %>%
+  sf::st_make_valid() %>% 
+  plot(max.plot = 1)
+```
+
+```{r}
+f <- tempfile()
+download.file("https://www.oecd.org/cfe/regionaldevelopment/list-of-municipalities-in-functional-urban-areas.xls", f)
+comp <- suppressMessages(read_excel(f, 2, guess_max = 1000, col_types = "text"))
+
+(st_area(ua[ua$URAU_CODE == "CZ001C1",])/1e6) %>% sum()
+(st_area(ua_cz[ua_cz$fuacode_si == "CZ001",])/1e6) %>% sum()
+
+st_crs(ua)
+st_crs(ua_cz)
+
+ua_cz %>%
+  filter(str_detect(fuacode_si, "CZ001")) %>%
+  st_area() %>% {./1e6}
+```
+
+```{r}
+ua %>%
+  filter(str_detect(URAU_CODE, "CZ001")) %>%
+  summarise() %>%
+  st_area() %>% {./1e6}
+
+ua_fcz <- ua %>%
+  filter(str_detect(URAU_CODE, "CZ"))
+
+kraje <- eurostat::eurostat_geodata_60_2016 %>% filter(str_detect(id, "CZ"))
+okresy <- CzechData::load_RUIAN_state("okresy")
+
+ggplot() +
+  geom_sf(data = ua_fcz, colour = "red", fill = NA) + # audit
+  geom_sf(data = ua_cz_core, colour = "pink", fill = NA) + # oecd core
+  geom_sf(data = kraje, colour = "black", fill = NA) + # oecd
+  geom_sf(data = ua_cz, colour = "blue", fill = NA)
+```
+
+
+

@@ -1,0 +1,65 @@
+---
+title: "index"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(gargle)
+library(DBI)
+library(sodium)
+library(googlesheets4)
+library(tidyverse)
+library(janitor)
+
+library(bigrquery)
+
+source("R/utils.R")
+```
+
+## Google sheets via Gargle auth
+
+```{r}
+auth_google("keys/sheets.json", "UO_SHEETS_PASSWORD", 
+            googlesheets4::gs4_auth, "pbouchal@gmail.com")
+
+dns <- googlesheets4::read_sheet("1ohis0XYklKjIdhbdh1Ca_0qKy-etXQhw1EiEXFfBAdI",
+                                 col_types = "c---------cciicccc") %>%
+  rename(redizo = RED_IZO) %>%
+  clean_names()
+```
+
+```{r}
+dns
+```
+
+## Test BigQuery via Gargle auth
+
+```{r}
+auth_google("keys/bq.json", "UO_BQ_PASSWORD", 
+            bigrquery::bq_auth, "pbouchal@gmail.com")
+
+prjname <- "ucimeonline"
+dsname <- "technologickamapa"
+
+bqc <- dbConnect(
+  bigrquery::bigquery(),
+  project = prjname,
+  dataset = dsname,
+  billing = prjname
+)
+```
+
+
+```{r, error=T}
+try(bigrquery::bq_table_delete(bq_table(prjname, dsname, "mtcars")))
+bigrquery::bq_table_upload(bq_table("ucimeonline", "technologickamapa", "mtcars"),
+                           values = mtcars)
+```
+
+```{r}
+tbl(bqc, "mtcars")
+```
+
+
