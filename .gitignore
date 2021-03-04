@@ -5,4 +5,6 @@ strukturovane-CSV
 data-processed
 !data-processed/.here
 data-input/*.xml
+data-input
 !data-input/.here
+_targets
