@@ -11,7 +11,7 @@
 
 
 
-<title>Dokumentace datového výstupu</title>
+<title>README.utf8</title>
 
 <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -273,14 +273,77 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Dokumentace datového výstupu</h1>
 
 </div>
 
 
-<pre class="r"><code>source(&quot;_packages.R&quot;)</code></pre>
-<pre><code>## * Option &#39;clustermq.scheduler&#39; not set, defaulting to &#39;LOCAL&#39;</code></pre>
-<pre><code>## --- see: https://mschubert.github.io/clustermq/articles/userguide.html#configuration</code></pre>
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<div id="data-analytický-pipeline-pro-učíme-online" class="section level1">
+<h1>Data analytický pipeline pro Učíme online</h1>
+<!-- badges: start -->
+<!-- badges: end -->
+<p>Tento repozitář obsahuje kód s pipelinem, který integruje (meta)data o českých školách a napojuje je na databázi škol podpořených v projektu Česko.digital <a href="https://www.ucimeonline.cz/">Učíme online</a>.</p>
+<p>Výsledný dataset umožňuje snadnou geolokaci a analýzu podpořených škol s ohledem na využíváné technologie a technickou podporu, to vše v kontextu ostatních škol i základních údajů o nich a jejich obcích.</p>
+<p>Technicky jde o {targets} pipeline v R, což umožňuje efektivnivní workflow a la <code>make</code>. Kód je stavěn tak, aby neopakoval již proběhlé kroky, běžěl automaticky a šel spustit i na jiném stroji (díky {renv}).</p>
+<p>Detailnější technická a datová dokumentace je v přípravě.</p>
+<div id="výstup" class="section level2">
+<h2>Výstup</h2>
+<p>Exportován v <a href="https://docs.google.com/spreadsheets/d/1WKZrK3MCzsNpcG1lCq7gV0s56z-2wcKeq4IWDaCO9ws/edit#gid=48952246">této uzavřeném google tabulce</a> - obsahuje neveřejná data.</p>
+</div>
+<div id="zdroje-dat" class="section level2">
+<h2>Zdroje dat</h2>
+<ul>
+<li>databáze Učíme online - poptávky (neveřejný <a href="https://airtable.com/tbldIU72q4YB1JRhL">Airtable</a>)</li>
+<li><a href="https://data.msmt.cz/dataset/rejstrik-skol-a-skolskych-zarizeni-cela-cr">registr škol MŠMT</a></li>
+<li>adresář škol <a href="http://stistko.uiv.cz/registr/vybskolrn.asp">Štístko</a> - na rozdíl od registru obsahuje adresy, domény aj.</li>
+<li><a href="https://vdp.cuzk.cz/vdp/ruian/adresnimista/vyhledej">adresní</a> a geografická data ČÚZK</li>
+<li>prostorové <a href="http://apl.czso.cz/iSMS/">číselníky</a> a <a href="https://www.czso.cz/csu/czso/pohyb-obyvatel-za-cr-kraje-okresy-so-orp-a-obce">základní demografická data ČSÚ</a></li>
+<li>seznam škol ČŠI pro prioritizaci podpory (neveřejné)</li>
+<li>DNS sken sítí (neveřejné)</li>
+<li>data MPO o dostupnosti internetu na daném adresním místě (neveřejné)</li>
+<li>manuální doplnění identifikátoru školy prostřednictvím oddělené <a href="https://docs.google.com/spreadsheets/d/1LcLMopcRXzbSR20f0ldGk27au5TGOTTzyxqD15eWlIg/edit#gid=831345840">google tabulky</a></li>
+</ul>
+<p>Detailnější dokumentace výstupního datasetu je v přípravě.</p>
+</div>
+<div id="to-do" class="section level2">
+<h2>TO DO</h2>
+<div id="data" class="section level3">
+<h3>Data</h3>
+<ul>
+<li>doplnit RED IZO škol, které nešly napojit na registr</li>
+</ul>
+</div>
+<div id="pipeline-a-dokumentace" class="section level3">
+<h3>Pipeline a dokumentace</h3>
+<ul>
+<li>formální dokumentace výstupních dat</li>
+<li>racionalizovat názvy sloupců</li>
+<li>detekce/rating kvality napojení na registr</li>
+</ul>
+</div>
+<div id="šířejí" class="section level3">
+<h3>Šířejí</h3>
+<ul>
+<li>re-scan DNS (via shell + <code>dig</code> nebo rovnou jedním z <a href="https://rud.is/b/r-cyber/">Rkových nástrojů na sběr a analýzu síťových dat</a>)</li>
+</ul>
+</div>
+<div id="data-která-by-stálo-za-to-prozkoumat" class="section level3">
+<h3>Data, která by stálo za to prozkoumat</h3>
+<ul>
+<li>obory vzdělávání v jednotlivých školách</li>
+<li>typ území - aglomerace (Urban Audit)</li>
+<li>finanční výkazy škol (Státní pokladna)</li>
+<li>eurofondy</li>
+<li>skutečné počty žáků podle dat pro RUD</li>
+<li>finanční data obcí</li>
+<li>socioek data obcí - nejspíš dostupná jen nezaměstnanost</li>
+<li>covid data obcí</li>
+<li>data z ročenky školství (asi mission impossible, špatně strukturovaná data)</li>
+</ul>
+<p>(Výzkumná otázka: které školy si říkají o pomoc?)</p>
+</div>
+</div>
+</div>
 
 
 
