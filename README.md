@@ -1,0 +1,82 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# Data analytický pipeline pro Učíme online
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+Tento repozitář obsahuje kód s pipelinem, který integruje (meta)data o
+českých školách a napojuje je na databázi škol podpořených v projektu
+Česko.digital [Učíme online](https://www.ucimeonline.cz/).
+
+Výsledný dataset umožňuje snadnou geolokaci a analýzu podpořených škol s
+ohledem na využíváné technologie a technickou podporu, to vše v kontextu
+ostatních škol i základních údajů o nich a jejich obcích.
+
+Technicky jde o {targets} pipeline v R, což umožňuje efektivnivní
+workflow a la `make`. Kód je stavěn tak, aby neopakoval již proběhlé
+kroky, běžěl automaticky a šel spustit i na jiném stroji (díky {renv}).
+
+Detailnější technická a datová dokumentace je v přípravě.
+
+## Výstup
+
+Exportován v [této uzavřeném google
+tabulce](https://docs.google.com/spreadsheets/d/1WKZrK3MCzsNpcG1lCq7gV0s56z-2wcKeq4IWDaCO9ws/edit#gid=48952246)
+- obsahuje neveřejná data.
+
+## Zdroje dat
+
+-   databáze Učíme online - poptávky (neveřejný
+    [Airtable](https://airtable.com/tbldIU72q4YB1JRhL))
+-   [registr škol
+    MŠMT](https://data.msmt.cz/dataset/rejstrik-skol-a-skolskych-zarizeni-cela-cr)
+-   adresář škol
+    [Štístko](http://stistko.uiv.cz/registr/vybskolrn.asp) - na rozdíl
+    od registru obsahuje adresy, domény aj.
+-   [adresní](https://vdp.cuzk.cz/vdp/ruian/adresnimista/vyhledej) a
+    geografická data ČÚZK
+-   prostorové [číselníky](http://apl.czso.cz/iSMS/) a [základní
+    demografická data
+    ČSÚ](https://www.czso.cz/csu/czso/pohyb-obyvatel-za-cr-kraje-okresy-so-orp-a-obce)
+-   seznam škol ČŠI pro prioritizaci podpory (neveřejné)
+-   DNS sken sítí (neveřejné)
+-   data MPO o dostupnosti internetu na daném adresním místě (neveřejné)
+-   manuální doplnění identifikátoru školy prostřednictvím oddělené
+    [google
+    tabulky](https://docs.google.com/spreadsheets/d/1LcLMopcRXzbSR20f0ldGk27au5TGOTTzyxqD15eWlIg/edit#gid=831345840)
+
+Detailnější dokumentace výstupního datasetu je v přípravě.
+
+## TO DO
+
+### Data
+
+-   doplnit RED IZO škol, které nešly napojit na registr
+
+### Pipeline a dokumentace
+
+-   formální dokumentace výstupních dat
+-   racionalizovat názvy sloupců
+-   detekce/rating kvality napojení na registr
+
+### Šířejí
+
+-   re-scan DNS (via shell + `dig` nebo rovnou jedním z [Rkových
+    nástrojů na sběr a analýzu síťových dat](https://rud.is/b/r-cyber/))
+
+### Data, která by stálo za to prozkoumat
+
+-   obory vzdělávání v jednotlivých školách
+-   typ území - aglomerace (Urban Audit)
+-   finanční výkazy škol (Státní pokladna)
+-   eurofondy
+-   skutečné počty žáků podle dat pro RUD
+-   finanční data obcí
+-   socioek data obcí - nejspíš dostupná jen nezaměstnanost
+-   covid data obcí
+-   data z ročenky školství (asi mission impossible, špatně
+    strukturovaná data)
+
+(Výzkumná otázka: které školy si říkají o pomoc?)
