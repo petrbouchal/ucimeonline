@@ -200,7 +200,7 @@ t_merge <- list(
                              sch_adr_org, sch_adr_sch, sch_reg_org, sch_reg_sch,
                              stat_obyv_obce)),
   tar_target(mdff, mdf %>% st_drop_geometry()),
-  tar_target(at_with_mdf_flat, flatten_data(mdf, text_recoded)),
+  tar_target(at_with_mdf_flat, flatten_data(at_with_mdf, text_recoded)),
   tar_target(mdf_with_at_mark, mdf %>% left_join(at_with_ids %>%
                                                    filter(!id %in% at_unmatched$id) %>%
                                                    select(red_izo, izo) %>%
