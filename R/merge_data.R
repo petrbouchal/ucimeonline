@@ -59,7 +59,11 @@ merge_data <- function(dns_df, csi_summary, mpo,
            src_dns = red_izo %in% dns_df$red_izo,
            src_mpo = red_izo %in% mpo$red_izo,
            kraj_kod = substr(okres_kod, 1, 5),
-           kapacita_kat = santoku::chop(kapacita, breaks = kapacita_breaks))
+           kapacita_kat = santoku::chop(kapacita, breaks = kapacita_breaks,
+                                        labels = lbl_dash(), extend = T) %>%
+             fct_recode(`Neznámá` = "-Inf - 1",
+                        `Přes 2000` = "2000 - Inf ") %>%
+             fct_relevel("Neznámá", after = 0L))
   mdfr
 }
 

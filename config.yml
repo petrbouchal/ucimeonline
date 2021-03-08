@@ -43,5 +43,5 @@ default:
   mpo_xlsx: "data-input/Školy - pokrytí 2019 - final ZD.xlsx"
 
   stats_rok: 2019
-  kapacita_breaks: [0, 100, 200, 600, 800, 1000, 2000]
+  kapacita_breaks: [1, 100, 200, 600, 800, 1000, 2000]
   obce_pocob_breaks: [200, 500, 1000, 10000, 20000, 50000, 100000, 1000000]
