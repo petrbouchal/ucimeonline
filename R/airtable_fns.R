@@ -20,7 +20,9 @@ at_load <- function(airtable_base_id, airtable_table_id) {
              str_trim(),
            web_domain = urltools::domain(webova_adresa_skoly) %>% str_trim(),
            web_domain_bare = str_remove(web_domain, "^www\\."),
-           datum_pozadavku = map_chr(datum_pozadavku_dd_mm_rrrr, as.character)) %>%
+           datum_pozadavku = map_chr(datum_pozadavku_dd_mm_rrrr, as.character) %>%
+             lubridate::ymd(),
+           timestamp = lubridate::parse_date_time(timestamp, orders = "d/m/y H:M:S", tz = "CET")) %>%
     select(-datum_pozadavku_dd_mm_rrrr)
 
   return(at_uo_dt)
