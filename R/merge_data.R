@@ -17,8 +17,10 @@ merge_data <- function(dns_df, csi_summary, mpo,
                        stat_obyv_obce) {
 
   adr_sch <- sch_adr_sch %>%
-    select(red_izo, izo, kapacita, okres_kod = uzemi,
-           skola_druh_nazev = druh_typ)
+    select(red_izo, izo, kapacita, okres_matrika_kod = uzemi,
+           skola_druh_nazev = druh_typ) %>%
+    mutate(okres_kod = if_else(str_detect(okres_matrika_kod, "CZ010"),
+                               "CZ0100", okres_matrika_kod))
 
   adr_org <- sch_adr_org %>%
     select(red_izo, plny_nazev, zkraceny_nazev,
