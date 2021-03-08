@@ -1,6 +1,10 @@
 
-# README
+# Poznámky k datům
 
-```{r, child="README.Rmd"}
+- [číselníky Štístka](http://stistko.uiv.cz/katalog/ciselnik.asp?vse=Zobrazit+v%9Aechny)
+
+
+
+```{r}
+# tar_visnetwork(T, label = c("size", "time", "branches"))
 ```
-
