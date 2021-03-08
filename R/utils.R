@@ -67,10 +67,6 @@ gdrive_modified <- function(id) {
   g_resource_attribute(id)
 }
 
-read_sheet_ifold <- function(sheet_id, sheet_name = NULL, sheet_modified_date, ...) {
-  googlesheets4::read_sheet(sheet_id, sheet = sheet_name, ...)
-}
-
 timestamp_outdated <- function(path, days_old) {
   if(file.exists(path)) {
     timestamp <- read_csv(path, col_types = cols(x = col_datetime()))[[1,"x"]]
@@ -79,3 +75,14 @@ timestamp_outdated <- function(path, days_old) {
     TRUE
   }
 }
+
+timestamp_every_n_days <- function(days) {
+  if(days < 1) {
+    return(Sys.time())
+  } else {
+    as.Date.POSIXct(floor(as.numeric(Sys.time())/(3600*24*days))*(3600*24*days))
+  }
+
+}
+
+timestamp_every_n_days(-1) == timestamp_every_n_days(0)

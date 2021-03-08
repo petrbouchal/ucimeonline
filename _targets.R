@@ -62,9 +62,6 @@ t_skoly_metadata <- list(
   # Adresář - štístkot
 
   tar_target(sch_adr_tables, c("addresses", "schools")),
-
-  tar_target(test_gdrive, {drive_get(id = tech_sheet_id)}),
-
   tar_force(sch_adr_resps,
             # run if last run is older than N days set in config
             force = adr_is_old,
@@ -155,8 +152,7 @@ t_mpo <- list(
 # DNS technical scan data -------------------------------------------------
 
 t_dns <- list(
-  tar_force(dns_df_date, gdrive_modified(tech_sheet_id), force = TRUE),
-  tar_target(dns_df, load_dns_gsheet(tech_sheet_id, dns_df_date)),
+  tar_change(dns_df, load_dns_gsheet(tech_sheet_id), gdrive_modified(tech_sheet_id)),
   tar_file(dns_pq, write_parquet_pth(dns_df, "data-processed/dns.parquet")),
   tar_target(dns_gqt, {try(bigrquery::bq_table_delete(bq_table(bq_project, bq_dataset, "dns")))
     bigrquery::bq_table_upload(bq_table(bq_project, bq_dataset, bq_table_dns),
@@ -175,14 +171,12 @@ manualni_id_tabname_manualids <-  cnf$manualni_id_tabname_manualids
 airtable_update_days <- cnf$airtable_update_days
 
 t_airtable <- list(
-  tar_force(at_dt, at_load(airtable_base_id, airtable_table_id),
-            # only run if last run was not today
-            force = timestamp_outdated(here::here("data-input/airtable_timestamp.csv"),
-                                       airtable_update_days)),
-  tar_force(at_manual_sheetmoddate, gdrive_modified(manualni_id_sheet_id), TRUE),
-  tar_target(at_manual_ids,
-             read_sheet_ifold(manualni_id_sheet_id, manualni_id_tabname_manualids,
-                              at_manual_sheetmoddate)),
+  tar_change(at_dt, at_load(airtable_base_id, airtable_table_id),
+            # only run if last run was set number of days ago
+            change = timestamp_every_n_days(airtable_update_days)),
+  tar_change(at_manual_ids,
+             read_sheet(manualni_id_sheet_id, manualni_id_tabname_manualids),
+             gdrive_modified(manualni_id_sheet_id)),
   tar_target(at_dc, at_process(at_dt, sch_reg_org, sch_reg_sch, sch_adr_org,
                                at_manual_ids)),
   tar_target(at_dc_for_geocoding, at_dc %>% filter(!(m_red_izo | m_nazev_exp))),

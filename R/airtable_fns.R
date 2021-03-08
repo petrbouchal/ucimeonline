@@ -23,8 +23,6 @@ at_load <- function(airtable_base_id, airtable_table_id) {
            datum_pozadavku = map_chr(datum_pozadavku_dd_mm_rrrr, as.character)) %>%
     select(-datum_pozadavku_dd_mm_rrrr)
 
-  write_csv(tibble(x = Sys.time()), here::here("data-input/airtable_timestamp.csv"))
-
   return(at_uo_dt)
 }
 
