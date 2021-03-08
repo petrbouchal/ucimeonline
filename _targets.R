@@ -204,8 +204,8 @@ t_merge <- list(
   tar_target(mdf_with_at_mark, mdf %>% left_join(at_with_ids %>%
                                                    filter(!id %in% at_unmatched$id) %>%
                                                    select(red_izo, izo) %>%
-                                                   mutate(help_requested = TRUE) %>%
-                                                   replace_na(list(help_requested = FALSE)))),
+                                                   mutate(help_requested = TRUE)) %>%
+               replace_na(list(help_requested = FALSE))),
   tar_target(mdf_with_at_mark_flat, flatten_data(mdf_with_at_mark, text_recoded))
 )
 
