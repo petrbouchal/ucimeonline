@@ -116,7 +116,10 @@ mdf_with_at_mark_flat %>%
   mutate(skola_typ = fct_recode(skola_druh_kod, 
                                 `Střední školy` = "C00", 
                                 `Základní školy` = "B00")) %>% 
-  mutate(google_or_ms = dns_gsuite | dns_o365) %>% 
+  mutate(google_or_ms = if_else(dns_gsuite | dns_o365,
+                                "Google/Microsoft",
+                                "Jiná") %>% 
+           fct_rev()) %>% 
   drop_na(google_or_ms) %>% 
   group_by(skola_typ, google_or_ms) %>% 
   summarise(help_requested = mean(help_requested, na.rm = T)) %>% 
@@ -170,6 +173,8 @@ at_with_mdf_flat %>%
 ```
 
 ## Prioritní školy podle ČŠI
+
+TO DO
 
 ```{r}
 
