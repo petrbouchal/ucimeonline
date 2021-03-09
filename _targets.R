@@ -193,7 +193,8 @@ t_airtable <- list(
   tar_target(at_with_mdf, left_join(at_with_ids, mdf) %>%
                rename(airtable_id = id) %>%
                st_as_sf()),
-  tar_target(at_unmatched, identify_unmatched_airtable_rows(at_with_ids))
+  tar_target(at_unmatched,
+             identify_unmatched_airtable_rows(at_with_ids, at_manual_ids))
 )
 
 # Merge data --------------------------------------------------------------

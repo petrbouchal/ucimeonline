@@ -97,9 +97,10 @@ geocode_osm <- function(data, variable) {
     mutate(geo_osm = map({{variable}}, geocode_one_osm))
 }
 
-identify_unmatched_airtable_rows <- function(at_with_ids) {
+identify_unmatched_airtable_rows <- function(at_with_ids, at_manual_ids) {
   at_with_ids %>%
     filter(is.na(red_izo) | !is.na(red_izo) & (is.na(izo) | is.na(skola_druh_kod))) %>%
+    filter(!id %in% at_manual_ids$id[is.na(at_manual_ids$red_izo)]) %>%
     select(id, red_izo, izo, skola_druh_kod, nazev_skoly_expanded, nazev_skoly, adresa_lower,
            reg_match_type) %>%
     as_tibble()
