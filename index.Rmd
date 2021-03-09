@@ -143,7 +143,8 @@ at_with_mdf_flat %>%
   ggplot(aes(ym, n, fill = stupen)) +
   geom_col() +
   scale_fill_brewer() +
-  scale_x_datetime(labels = scales::label_date_short()) +
+  scale_x_datetime(labels = label_date_short(),
+                   date_breaks = "1 month") +
   theme_ptrr("y")
 ```
 
@@ -167,7 +168,7 @@ at_with_mdf_flat %>%
   ggplot(aes(ym, n, fill = csi_priorita)) +
   geom_col() +
   scale_fill_brewer(palette = "YlOrBr") +
-  scale_x_datetime(labels = scales::label_date_short()) +
+  scale_x_datetime(labels = label_date_short(), date_breaks = "1 month") +
   theme_ptrr("y", multiplot = T) +
   facet_wrap(skola_typ~., nrow = 3) 
 ```

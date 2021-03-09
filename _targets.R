@@ -14,7 +14,8 @@ tar_option_set(packages = c("dplyr", "tidyr", "stringr", "lubridate",
                             "tibble", "googlesheets4", "bigrquery", "janitor",
                             "readr", "readxl", "curl", "purrr", "targets",
                             "tarchetypes", "forcats", "ptrr", "czso", "santoku",
-                            "pointblank", "airtabler", "googledrive"),
+                            "pointblank", "airtabler", "googledrive",
+                            "scales"),
                imports = c("vsezved"))
 
 # Config ------------------------------------------------------------------
