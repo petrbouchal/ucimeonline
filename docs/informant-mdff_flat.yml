@@ -1,0 +1,138 @@
+type: informant
+read_fn: ~mdff_flat
+tbl_name: mdff_flat
+info_label: '[2021-03-06|01:17:13]'
+lang: en
+locale: en
+table:
+  name: mdff_flat
+  _columns: 62
+  _rows: 6610.0
+  _type: tbl_df
+columns:
+  red_izo:
+    _type: character
+  izo:
+    _type: character
+  ico:
+    _type: character
+  obec_kod:
+    _type: character
+  adm_kod:
+    _type: character
+  momc_kod:
+    _type: character
+  sour_x:
+    _type: numeric
+  sour_y:
+    _type: numeric
+  coord_lon:
+    _type: numeric
+  coord_lat:
+    _type: numeric
+  point_wkt:
+    _type: character
+  zuj_kod:
+    _type: character
+  zuj_typ:
+    _type: character
+  zriz_ico:
+    _type: character
+  zriz_druh_kod:
+    _type: character
+  pravni_forma:
+    _type: character
+  skola_druh_kod:
+    _type: character
+  kapacita:
+    _type: numeric
+  okres_kod:
+    _type: character
+  skola_druh_nazev:
+    _type: character
+  plny_nazev:
+    _type: character
+  zkraceny_nazev:
+    _type: character
+  kraj_nazev:
+    _type: character
+  orp_kod:
+    _type: character
+  obec_nazev:
+    _type: character
+  rok:
+    _type: integer
+  obec_pocobyv:
+    _type: numeric
+  obec_pocobyv_kat:
+    _type: factor
+  typskoly:
+    _type: factor
+  csi_priorita:
+    _type: factor
+  typskoly_txt:
+    _type: factor
+  has_tech_selected:
+    _type: logical
+  text_recoded:
+    _type: character
+  csi_has_google:
+    _type: logical
+  csi_only_whatsapp:
+    _type: logical
+  csi_has_ms:
+    _type: logical
+  barva_zsj_30_mbit_s:
+    _type: character
+  barva_zsj_100_mbit_s:
+    _type: character
+  deklarovano_pokryti_siti_do_30_mbit_s:
+    _type: character
+  deklarovano_pokryti_nga_siti_30_mbit_s:
+    _type: character
+  deklarovano_pokryti_nga_siti_100_mbit_s:
+    _type: character
+  deklarovano_pokryti_nga_1gbit_s:
+    _type: character
+  pocet_ruznych_provozovatelu_siti_30_mbit_s:
+    _type: numeric
+  pocet_ruznych_provozovatelu_siti_100_mbit_s:
+    _type: numeric
+  aktivni_pristupy_30_mbit_s:
+    _type: numeric
+  aktivni_pristupy_100_mbit_s:
+    _type: numeric
+  web_skoly:
+    _type: character
+  domena_skoly:
+    _type: character
+  dns_gsuite:
+    _type: logical
+  dns_o365:
+    _type: logical
+  mx_dns_zaznamy:
+    _type: character
+  txt_dns_zaznamy:
+    _type: character
+  vlajka:
+    _type: character
+  dns_odhad_sluzba:
+    _type: character
+  shoda_ms:
+    _type: logical
+  shoda_google:
+    _type: logical
+  shoda:
+    _type: logical
+  src_csi:
+    _type: logical
+  src_dns:
+    _type: logical
+  src_mpo:
+    _type: logical
+  kraj_kod:
+    _type: character
+  kapacita_kat:
+    _type: factor
+  starts_with("csi"):
+    source: ČŠI
