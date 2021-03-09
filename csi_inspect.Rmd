@@ -1,0 +1,182 @@
+---
+title: "csi_inspect"
+---
+
+```{r setup, include=FALSE}
+targets::tar_load(csi_summary)
+targets::tar_load(csi)
+targets::tar_load(csi_recoded)
+targets::tar_load(g_poly_kraje)
+targets::tar_load(g_poly_okresy)
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r plot-tech-lines}
+# kde chybi data
+csi_summary %>%
+  group_by(priorita, typskoly_txt) %>%
+  summarise(has_tech_selected = mean(has_tech_selected)) %>%
+  ggplot(aes(colour = typskoly_txt, x = priorita, y = has_tech_selected,
+             group = typskoly_txt)) +
+  geom_line() +
+  geom_point(size = 3) +
+  scale_y_percent_cz(expand = c(0.1, 0)) +
+  theme_ptrr("both") +
+  labs(title = "Využívání technologií ve školách",
+       subtitle = "Podíl škol, které v dotazníku ČŠI uvedly nějakou technologii\npodle priority ČŠI a stupně školy")
+```
+
+```{r plot-tech-bars}
+csi_summary %>% 
+  group_by(typskoly_txt, priorita) %>% 
+  summarise(across(c(has_google, only_whatsapp, has_ms), mean, na.rm = T)) %>% 
+  pivot_longer(cols = c(has_google, only_whatsapp, has_ms)) %>%
+  ggplot() +
+  geom_col(aes(y = name, x = value)) +
+  facet_grid(fct_rev(priorita)~typskoly_txt) +
+  theme_ptrr("x", multiplot = T) +
+  scale_x_percent_cz(expand = expansion(c(0, 0.05))) +
+  scale_y_discrete(labels = c(only_whatsapp = "Jen WhatsApp",
+                              has_ms = "MS Teams/O365",
+                              has_google = "Google Hangout/Meet/Classroom")) +
+  ggtitle(aes(title = "Využívání vybraných technologií",
+              subtitle = "Podíl škol, z dotazníku ČŠI"))
+```
+
+```{r plot-tech-detail-bars}
+csi_recoded %>%
+  mutate(typskoly_txt = case_when(typskoly == "zs" ~ "Základní škola",
+                                  typskoly == "ss" ~ "Střední škola") %>%
+           fct_relevel("Střední škola", after = Inf),
+         text_recoded = fct_infreq(text_recoded) %>% fct_rev()) %>% 
+  count(priorita, typskoly_txt, text_recoded, sort = T) %>%
+  ggplot(aes(fill = text_recoded,
+             group = typskoly_txt,
+             y = text_recoded, x = n)) +
+  geom_col() +
+  facet_grid(fct_rev(priorita)~typskoly_txt) +
+  scale_fill_discrete(guide = NULL) +
+  theme_ptrr("x") +
+  labs(title = "Využívání technologii - detail",
+       subtitle = "Počet škol, z dotazníku ČŠI, priorita dle ČŠI")
+```
+
+```{r}
+csi_recoded %>%
+  filter(freetext) %>% 
+  count(text_detail, sort = T)
+```
+
+
+```{r}
+csi_recoded %>%
+  count(priorita, text_detail, sort = T) %>% 
+  spread(priorita, n)
+```
+
+
+```{r plot-tech-detail-heatmap}
+csi_recoded %>%
+  mutate(text_recoded = fct_infreq(text_recoded) %>% fct_rev()) %>%
+  group_by(typskoly_txt, priorita) %>%
+  add_count() %>%
+  group_by(text_recoded, .add = T) %>%
+  summarise(podil = n()/n) %>%
+  ggplot(aes(y = text_recoded, x = priorita)) +
+  geom_tile(aes(fill = podil)) +
+  geom_label(label.size = 0, size = 3, 
+             aes(label = label_percent_cz(1)(podil),
+                 fill = after_scale(colorspace::lighten(fill)))) +
+  scale_fill_continuous(labels = ptrr::label_percent_cz(1)) +
+  facet_wrap(~ typskoly_txt) +
+  ptrr::theme_ptrr("none")
+
+```
+
+```{r map-prep-csi}
+csi_kraj_priorita <- mdff %>% 
+  drop_na(typskoly_txt) %>% 
+  group_by(kraj_kod, kraj_nazev, typskoly_txt) %>% 
+  summarise(priorita = mean(as.numeric(csi_priorita), na.rm =T))
+
+csi_okres_priorita <- mdff %>% 
+  drop_na(typskoly_txt) %>% 
+  group_by(okres_kod, typskoly_txt) %>% 
+  summarise(priorita = mean(as.numeric(csi_priorita), na.rm =T))
+
+csi_kraj_pokryti <- mdff %>% 
+  filter(skola_druh_nazev %in% c("Základní škola", "Střední škola")) %>% 
+  group_by(kraj_kod, kraj_nazev, skola_druh_nazev) %>% 
+  summarise(csi = mean(src_csi, na.rm =T))
+
+csi_okres_pokryti <- mdff %>% 
+  filter(skola_druh_nazev %in% c("Základní škola", "Střední škola")) %>% 
+  group_by(okres_kod, kraj_nazev, skola_druh_nazev) %>% 
+  summarise(csi = mean(src_csi, na.rm =T))
+```
+
+
+```{r map-kraj-csi-priorita}
+g_poly_kraje %>% 
+  left_join(csi_kraj_priorita, by = c(id = "kraj_kod")) %>% 
+  drop_na(typskoly_txt) %>% 
+  ggplot(aes(fill = priorita)) +
+  geom_sf(colour = "grey80") +
+  scale_fill_binned(type = "viridis", name = "Průměrná priorita") +
+  facet_wrap(~typskoly_txt) +
+  theme_ptrr(map = T, multiplot = T, legend.position = "bottom",
+             legend.key.width = unit(1, "cm"), legend.key.height = unit(.3, "cm"))
+```
+
+```{r map-kraj-csi-pokryti}
+g_poly_kraje %>% 
+  left_join(csi_kraj_pokryti, by = c(id = "kraj_kod")) %>% 
+  drop_na(skola_druh_nazev) %>% 
+  ggplot(aes(fill = csi)) +
+  geom_sf(colour = "grey80") + 
+  scale_fill_viridis_b(direction = 1, labels = label_percent_cz(1),
+                       name = "Podíl škol zahrnutých v seznamu ČŠI") +
+  theme_ptrr(multiplot = T, legend.position = "bottom", map = TRUE,
+             legend.key.width = unit(1, "cm"), 
+             legend.key.height = unit(.3, "cm")) +
+  facet_wrap(~skola_druh_nazev)
+```
+
+```{r map-okres-csi-pokryti}
+crossing(typskoly_txt = unique(csi_okres_priorita$typskoly_txt),
+         okres_kod = unique(g_poly_okresy$KOD_LAU1)) %>% 
+  full_join(csi_okres_pokryti) %>% 
+  full_join(g_poly_okresy,  by = c(okres_kod = "KOD_LAU1")) %>% 
+  # make the Prague polygon with no CSI data a SS polygon
+  replace_na(list(skola_druh_nazev = "Střední škola")) %>% 
+  # add the Prague polygon for our ZS map
+  bind_rows(g_poly_okresy %>% 
+              filter(KOD_LAU1 == "CZ0100") %>% 
+              mutate(skola_druh_nazev = "Základní škola")) %>% 
+  st_as_sf() %>%
+  ggplot(aes(fill = csi)) +
+  geom_sf(aes(), colour = "white") +
+  scale_fill_viridis_b(labels = label_percent_cz(1)) +
+  theme_ptrr(multiplot = T, legend.position = "bottom", map = TRUE,
+             legend.key.width = unit(1, "cm"), 
+             legend.key.height = unit(.3, "cm")) +
+  facet_wrap(~fct_rev(skola_druh_nazev))
+```
+
+```{r map-okres-csi-priorita}
+
+crossing(typskoly_txt = unique(csi_okres_priorita$typskoly_txt),
+         okres_kod = unique(g_poly_okresy$KOD_LAU1)) %>% 
+  left_join(csi_okres_priorita) %>% 
+  full_join(g_poly_okresy,  by = c(okres_kod = "KOD_LAU1")) %>% 
+  replace_na(list(typskoly_txt = "Střední škola")) %>% 
+  st_as_sf() %>% 
+  ggplot(aes(fill = priorita)) +
+  geom_sf(colour = "white") +
+  facet_wrap(~typskoly_txt) +
+  scale_fill_fermenter(direction = 1) +
+  theme_ptrr(multiplot = T, legend.position = "bottom", map = TRUE,
+             legend.key.width = unit(1, "cm"), 
+             legend.key.height = unit(.3, "cm"))
+```
