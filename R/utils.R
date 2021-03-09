@@ -59,8 +59,8 @@ flatten_data <- function(df, column) {
 }
 
 g_resource_attribute <- function(id, attribute_name = "modifiedTime") {
-  g_thing_metadata <- drive_get(id = id)
-  g_thing_metadata[['drive_resource']][[attribute_name]]
+  g_thing_metadata <- drive_get(id = as_id(id))
+  g_thing_metadata[['drive_resource']][[1]][[attribute_name]]
 }
 
 gdrive_modified <- function(id) {
