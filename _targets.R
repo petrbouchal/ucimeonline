@@ -180,7 +180,9 @@ t_airtable <- list(
              gdrive_modified(manualni_id_sheet_id)),
   tar_target(at_dc, at_process(at_dt, sch_reg_org, sch_reg_sch, sch_adr_org,
                                at_manual_ids)),
-  tar_target(at_dc_for_geocoding, at_dc %>% filter(!(m_red_izo | m_nazev_exp))),
+  tar_target(at_dc_for_geocoding, at_dc %>%
+               filter(!(m_red_izo | m_nazev_exp)) %>%
+               select(id, adresa_lower)),
   tar_target(at_geocoded_cuzk, geocode_cuzk(at_dc_for_geocoding, adresa_lower)),
   tar_target(at_geocoded_osm, geocode_osm(at_dc_for_geocoding, adresa_lower)),
   tar_target(at_with_geo, at_dc %>%
