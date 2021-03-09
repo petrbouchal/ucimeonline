@@ -1,12 +1,16 @@
 ---
-title: "Přehled"
+title: "Učíme online: rok podpory škol"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 source(here::here("_packages.R"))
 source(here::here("R/utils.R"))
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+Sys.setlocale(locale = "cs_CZ.UTF-8", category = "LC_ALL")
+
+options(scipen = 100)
 
 ptrr::set_geom_defaults()
 ptrr::set_ptrr_ggplot_fonts()
@@ -15,81 +19,213 @@ targets::tar_load(mdf)
 targets::tar_load(mdff)
 targets::tar_load(g_poly_kraje)
 targets::tar_load(g_poly_okresy)
+targets::tar_load(mdf_with_at_mark)
+targets::tar_load(mdf_with_at_mark_flat)
+targets::tar_load(at_with_mdf_flat)
 ```
 
+## Které školy si řekly o pomoc {.tabset}
 
-```{r map-kraj-csi-priorita}
-g_poly_kraje %>% 
-  left_join(csi_kraj_priorita, by = c(id = "kraj_kod")) %>% 
-  drop_na(typskoly_txt) %>% 
-  ggplot(aes(fill = priorita)) +
-  geom_sf() +
-  facet_wrap(~typskoly_txt)
-```
+### Podle velikosti školy
 
-```{r map-kraj-csi-pokryti}
-g_poly_kraje %>% 
-  left_join(csi_kraj_pokryti, by = c(id = "kraj_kod")) %>% 
-  drop_na(skola_druh_nazev) %>% 
-  ggplot(aes(fill = csi)) +
-  geom_sf(colour = "grey80") + 
-  scale_fill_fermenter(direction = 1, labels = label_percent_cz(1)) +
-  theme_ptrr(multiplot = T, legend.position = "bottom",
-             panel.grid.major = element_line(colour = 'transparent'),
-             axis.text.x = element_blank(), axis.text.y = element_blank()) +
-  facet_wrap(~skola_druh_nazev)
-```
-
-```
-
-
-
-```{r}
-mdff %>% 
-  group_by(kapacita_kat, skola_druh_nazev) %>% 
-  filter(skola_druh_nazev %in% c("Střední škola", "Základní škola")) %>% 
-  summarise(csi = mean(has_tech_selected, na.rm = T)) %>% 
-  spread(skola_druh_nazev, csi)
-```
-```{r}
-mdff %>% 
-  group_by(kapacita_kat, skola_druh_nazev) %>% 
-  filter(skola_druh_nazev %in% c("Střední škola", "Základní škola")) %>% 
-  summarise(big2 = mean(dns_o365 | dns_gsuite, na.rm = T)) %>% 
-  spread(skola_druh_nazev, big2)
-```
-
-
-```
-
+```{r, fig.height=4}
+mdf_with_at_mark_flat %>% 
+  filter(skola_druh_kod %in% c("B00", "C00")) %>% 
+  mutate(skola_typ = fct_recode(skola_druh_kod, 
+                                `Střední školy` = "C00", 
+                                `Základní školy` = "B00")) %>% 
+  group_by(kapacita_kat, skola_typ) %>% 
+  summarise(help_requested = mean(help_requested, na.rm = T)) %>% 
+  ggplot(aes(x = help_requested, y = kapacita_kat)) +
   geom_col() +
+  theme_ptrr("x", multiplot = T, legend.position = "bottom") +
+  scale_x_percent_cz() +
+  facet_wrap(~ skola_typ)
 ```
 
+### Podle velikosti obce
+
+```{r, fig.height=4}
+mdf_with_at_mark_flat %>% 
+  drop_na(obec_pocobyv_kat) %>% 
+  filter(skola_druh_kod %in% c("B00", "C00")) %>% 
+  mutate(skola_typ = fct_recode(skola_druh_kod, 
+                                `Střední školy` = "C00", 
+                                `Základní školy` = "B00")) %>% 
+  group_by(obec_pocobyv_kat, skola_typ) %>% 
+  summarise(help_requested = mean(help_requested, na.rm = T)) %>% 
+  ggplot(aes(x = help_requested, y = obec_pocobyv_kat)) +
+  geom_col() +
+  theme_ptrr("x", multiplot = T, legend.position = "bottom") +
+  scale_x_percent_cz() +
+  facet_wrap(~ skola_typ)
+```
+
+
+### Podle okresu
 
 ```{r}
-csi_recoded %>%
-  filter(freetext) %>% 
-  count(text_detail, sort = T)
+mdf_with_at_mark_flat %>% 
+  replace_na(list(help_requested = FALSE)) %>% 
+  filter(skola_druh_kod %in% c("B00", "C00")) %>% 
+  mutate(skola_typ = fct_recode(skola_druh_kod, 
+                                `Střední školy` = "C00", 
+                                `Základní školy` = "B00")) %>% 
+  group_by(okres_kod, skola_typ) %>% 
+  summarise(help_requested = mean(help_requested, na.rm = T)) %>% 
+  left_join(g_poly_okresy %>% rename(okres_kod = KOD_LAU1)) %>% 
+  st_as_sf() %>% 
+  ggplot(aes(fill = help_requested)) +
+  geom_sf(colour = "grey80") +
+  scale_fill_viridis_b(labels = label_percent_cz(1),
+                       name = "Podíl škol v okrese") +
+  theme_ptrr(map = T, multiplot = T, legend.position = "bottom",
+             legend.key.width = unit(1, "cm"), 
+             legend.key.height = unit(.3, "cm")) +
+  facet_wrap(~ skola_typ)
+
 ```
 
+### Podle priority ČŠI
+
+```{r, fig.height=4}
+mdf_with_at_mark_flat %>% 
+  filter(skola_druh_kod %in% c("B00", "C00")) %>% 
+  mutate(skola_typ = fct_recode(skola_druh_kod, 
+                                `Střední školy` = "C00", 
+                                `Základní školy` = "B00")) %>% 
+  mutate(csi_priorita = fct_explicit_na(csi_priorita,
+                                        "Není na seznamu\nprioritních škol") %>% 
+           fct_relevel("Není na seznamu\nprioritních škol", after = 0L)) %>% 
+  group_by(csi_priorita, skola_typ) %>% 
+  summarise(help_requested = mean(help_requested, na.rm = T)) %>% 
+  ggplot(aes(y = csi_priorita, x = help_requested)) +
+  geom_col() +
+  facet_wrap(~skola_typ) +
+  scale_x_percent_cz() +
+  labs(title = "Podíl") +
+  theme_ptrr("x", multiplot = T)
+
+```
+
+### Podle používané technologie
+
+```{r, fig.height=2}
+mdf_with_at_mark_flat %>% 
+  filter(skola_druh_kod %in% c("B00", "C00")) %>% 
+  mutate(skola_typ = fct_recode(skola_druh_kod, 
+                                `Střední školy` = "C00", 
+                                `Základní školy` = "B00")) %>% 
+  mutate(google_or_ms = dns_gsuite | dns_o365) %>% 
+  drop_na(google_or_ms) %>% 
+  group_by(skola_typ, google_or_ms) %>% 
+  summarise(help_requested = mean(help_requested, na.rm = T)) %>% 
+  ggplot(aes(y = google_or_ms, x = help_requested)) +
+  geom_col() +
+  facet_wrap(~skola_typ) +
+  scale_x_percent_cz() +
+  theme_ptrr("x", multiplot = T)
+```
+
+## Poptávky v čase {.tabset}
+
+### Podle stupně
 
 ```{r}
-csi_recoded %>%
-  count(priorita, text_detail, sort = T) %>% 
-  spread(priorita, n)
+at_with_mdf_flat %>% 
+  mutate(ym = floor_date(timestamp, "month"),
+         stupen = fct_rev(stupen)) %>% 
+  group_by(ym, stupen) %>% 
+  count() %>% 
+  ggplot(aes(ym, n, fill = stupen)) +
+  geom_col() +
+  scale_fill_brewer() +
+  scale_x_datetime(labels = scales::label_date_short()) +
+  theme_ptrr("y")
 ```
 
-
-
-```
+### Podle priority dle ČŠI
 
 ```{r}
-options(scipen = 100)
+at_with_mdf_flat %>% 
+  mutate(ym = floor_date(timestamp, "month"),
+         stupen = fct_rev(stupen)) %>% 
+  mutate(skola_typ = fct_recode(skola_druh_kod, 
+                                `Střední školy` = "C00", 
+                                `Základní školy` = "B00") %>% 
+           fct_other(c("Střední školy", "Základní školy"), 
+                     other_level = "Ostatní") %>% 
+           fct_explicit_na("Ostatní")) %>% 
+  mutate(csi_priorita = fct_explicit_na(csi_priorita,
+                                        "Není na seznamu\nprioritních škol") %>% 
+           fct_relevel("Není na seznamu\nprioritních škol", after = 0L)) %>% 
+  group_by(ym, csi_priorita, skola_typ) %>% 
+  count() %>% 
+  ggplot(aes(ym, n, fill = csi_priorita)) +
+  geom_col() +
+  scale_fill_brewer(palette = "YlOrBr") +
+  scale_x_datetime(labels = scales::label_date_short()) +
+  theme_ptrr("y", multiplot = T) +
+  facet_wrap(skola_typ~., nrow = 3) 
 ```
 
-
+## Prioritní školy podle ČŠI
 
 ```{r}
-# tar_visnetwork(T, label = c("size", "time", "branches"))
+
 ```
 
+
+## Technologická mapa {.tabset}
+
+### Podle velikosti obce
+
+```{r, fig.height=4}
+mdff %>% 
+  group_by(obec_pocobyv_kat, skola_druh_nazev) %>% 
+  filter(skola_druh_nazev %in% c("Střední škola", "Základní škola")) %>% 
+  summarise(csi = mean(has_tech_selected, na.rm = T),
+            google_or_ms = mean(dns_gsuite | dns_o365,
+                                na.rm = TRUE),
+            cnt = n()) %>% 
+  drop_na(obec_pocobyv_kat) %>% 
+  ggplot(aes(x = google_or_ms, y = obec_pocobyv_kat)) +
+  scale_x_percent_cz() +
+  facet_wrap(~ skola_druh_nazev) +
+  theme_ptrr("x", multiplot = T) +
+  geom_col() +
+  labs(title = "Technologie Google/Microsoft podle velikosti obce",
+       subtitle = "Podíl škol v dané kategorii, který měl buď Google nebo MS")
+```
+
+### Podle okresu
+
+```{r}
+crossing(skola_druh_nazev = unique(mdff$skola_druh_nazev),
+         okres_kod = unique(g_poly_okresy$KOD_LAU1)) %>%  
+  left_join(mdff %>% 
+              mutate(okres_kod = if_else(str_detect(okres_kod, "CZ010"),
+                                         "CZ0100", okres_kod)) %>% 
+              filter(skola_druh_kod %in% c("B00", "C00")) %>% 
+              group_by(okres_kod, skola_druh_nazev, skola_druh_kod) %>% 
+              summarise(google_or_ms = mean(dns_gsuite | dns_o365,
+                                            na.rm = TRUE)) 
+  ) %>% 
+  filter(skola_druh_kod %in% c("B00", "C00")) %>% 
+  mutate(skola_typ = fct_recode(skola_druh_kod, 
+                                `Střední školy` = "C00", 
+                                `Základní školy` = "B00")) %>% 
+  full_join(g_poly_okresy,  by = c(okres_kod = "KOD_LAU1")) %>% 
+  st_as_sf() %>% 
+  ggplot(aes(fill = google_or_ms)) +
+  geom_sf(colour = "grey80") +
+  scale_fill_viridis_b(labels = label_percent_cz(),
+                       name = "Podíl škol v okrese") +
+  theme_ptrr(map = T, multiplot = T, legend.position = "bottom",
+             legend.key.width = unit(1, "cm"), 
+             legend.key.height = unit(.3, "cm")) +
+  facet_wrap(~ skola_typ) +
+  labs(title = "Využití Google/Microsoft ve školách podle okresů",
+       subtitle = "Školy s platformou Google nebo MS")
+
+```
