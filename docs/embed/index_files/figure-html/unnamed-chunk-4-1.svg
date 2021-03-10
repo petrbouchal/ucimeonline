@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 504.00 180.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    line, polyline, polygon, path, rect, circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpODIuOTF8Mjg3LjczfDE2MS4xN3w0MS4zNA=='>
+    <rect x='82.91' y='41.34' width='204.82' height='119.83' />
+  </clipPath>
+</defs>
+<rect x='82.91' y='41.34' width='204.82' height='119.83' style='stroke-width: 1.07; stroke: none; fill: #E3F1FF;' clip-path='url(#cpODIuOTF8Mjg3LjczfDE2MS4xN3w0MS4zNA==)' />
+<polyline points='82.91,161.17 82.91,41.34 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpODIuOTF8Mjg3LjczfDE2MS4xN3w0MS4zNA==)' />
+<polyline points='155.05,161.17 155.05,41.34 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpODIuOTF8Mjg3LjczfDE2MS4xN3w0MS4zNA==)' />
+<polyline points='227.19,161.17 227.19,41.34 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpODIuOTF8Mjg3LjczfDE2MS4xN3w0MS4zNA==)' />
+<rect x='82.91' y='131.21' width='51.86' height='25.68' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #0000FF;' clip-path='url(#cpODIuOTF8Mjg3LjczfDE2MS4xN3w0MS4zNA==)' />
+<rect x='82.91' y='102.68' width='195.06' height='25.68' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #0000FF;' clip-path='url(#cpODIuOTF8Mjg3LjczfDE2MS4xN3w0MS4zNA==)' />
+<rect x='82.91' y='74.15' width='161.82' height='25.68' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #0000FF;' clip-path='url(#cpODIuOTF8Mjg3LjczfDE2MS4xN3w0MS4zNA==)' />
+<rect x='82.91' y='45.62' width='166.25' height='25.68' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #0000FF;' clip-path='url(#cpODIuOTF8Mjg3LjczfDE2MS4xN3w0MS4zNA==)' />
+<defs>
+  <clipPath id='cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA='>
+    <rect x='0.00' y='0.00' width='504.00' height='180.00' />
+  </clipPath>
+</defs>
+<defs>
+  <clipPath id='cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8NDEuMzQ='>
+    <rect x='293.21' y='41.34' width='204.82' height='119.83' />
+  </clipPath>
+</defs>
+<rect x='293.21' y='41.34' width='204.82' height='119.83' style='stroke-width: 1.07; stroke: none; fill: #E3F1FF;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8NDEuMzQ=)' />
+<polyline points='293.21,161.17 293.21,41.34 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8NDEuMzQ=)' />
+<polyline points='365.35,161.17 365.35,41.34 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8NDEuMzQ=)' />
+<polyline points='437.49,161.17 437.49,41.34 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8NDEuMzQ=)' />
+<rect x='293.21' y='131.21' width='29.25' height='25.68' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #0000FF;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8NDEuMzQ=)' />
+<rect x='293.21' y='102.68' width='111.49' height='25.68' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #0000FF;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8NDEuMzQ=)' />
+<rect x='293.21' y='74.15' width='105.57' height='25.68' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #0000FF;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8NDEuMzQ=)' />
+<rect x='293.21' y='45.62' width='122.51' height='25.68' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #0000FF;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8NDEuMzQ=)' />
+<defs>
+  <clipPath id='cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA='>
+    <rect x='0.00' y='0.00' width='504.00' height='180.00' />
+  </clipPath>
+</defs>
+<defs>
+  <clipPath id='cpODIuOTF8Mjg3LjczfDQxLjM0fDI0LjY2'>
+    <rect x='82.91' y='24.66' width='204.82' height='16.69' />
+  </clipPath>
+</defs>
+<rect x='82.91' y='24.66' width='204.82' height='16.69' style='stroke-width: 1.07; stroke: none; fill: #E3F1FF;' clip-path='url(#cpODIuOTF8Mjg3LjczfDQxLjM0fDI0LjY2)' />
+<g clip-path='url(#cpODIuOTF8Mjg3LjczfDQxLjM0fDI0LjY2)'><text x='87.29' y='36.07' style='font-size: 8.80px; fill: #1A1A1A; font-family: IBM Plex Sans Condensed;' textLength='51.12px' lengthAdjust='spacingAndGlyphs'>Základní školy</text></g>
+<defs>
+  <clipPath id='cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA='>
+    <rect x='0.00' y='0.00' width='504.00' height='180.00' />
+  </clipPath>
+</defs>
+<defs>
+  <clipPath id='cpMjkzLjIxfDQ5OC4wMnw0MS4zNHwyNC42Ng=='>
+    <rect x='293.21' y='24.66' width='204.82' height='16.69' />
+  </clipPath>
+</defs>
+<rect x='293.21' y='24.66' width='204.82' height='16.69' style='stroke-width: 1.07; stroke: none; fill: #E3F1FF;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnw0MS4zNHwyNC42Ng==)' />
+<g clip-path='url(#cpMjkzLjIxfDQ5OC4wMnw0MS4zNHwyNC42Ng==)'><text x='297.59' y='36.07' style='font-size: 8.80px; fill: #1A1A1A; font-family: IBM Plex Sans Condensed;' textLength='46.33px' lengthAdjust='spacingAndGlyphs'>Střední školy</text></g>
+<defs>
+  <clipPath id='cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA='>
+    <rect x='0.00' y='0.00' width='504.00' height='180.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='75.92' y='172.24' style='font-size: 8.80px; fill: #4D4D4D; font-family: IBM Plex Sans Condensed;' textLength='13.98px' lengthAdjust='spacingAndGlyphs'>0 %</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='145.68' y='172.24' style='font-size: 8.80px; fill: #4D4D4D; font-family: IBM Plex Sans Condensed;' textLength='18.74px' lengthAdjust='spacingAndGlyphs'>10 %</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='217.83' y='172.24' style='font-size: 8.80px; fill: #4D4D4D; font-family: IBM Plex Sans Condensed;' textLength='18.74px' lengthAdjust='spacingAndGlyphs'>20 %</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='286.21' y='172.24' style='font-size: 8.80px; fill: #4D4D4D; font-family: IBM Plex Sans Condensed;' textLength='13.98px' lengthAdjust='spacingAndGlyphs'>0 %</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='355.98' y='172.24' style='font-size: 8.80px; fill: #4D4D4D; font-family: IBM Plex Sans Condensed;' textLength='18.74px' lengthAdjust='spacingAndGlyphs'>10 %</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='428.12' y='172.24' style='font-size: 8.80px; fill: #4D4D4D; font-family: IBM Plex Sans Condensed;' textLength='18.74px' lengthAdjust='spacingAndGlyphs'>20 %</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='16.87' y='142.37' style='font-size: 8.80px; fill: #4D4D4D; font-family: IBM Plex Sans Condensed;' textLength='61.11px' lengthAdjust='spacingAndGlyphs'>Není na seznamu</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='24.71' y='151.88' style='font-size: 8.80px; fill: #4D4D4D; font-family: IBM Plex Sans Condensed;' textLength='53.27px' lengthAdjust='spacingAndGlyphs'>prioritních škol</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='52.15' y='118.59' style='font-size: 8.80px; fill: #4D4D4D; font-family: IBM Plex Sans Condensed;' textLength='25.83px' lengthAdjust='spacingAndGlyphs'>Střední</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='59.44' y='90.06' style='font-size: 8.80px; fill: #4D4D4D; font-family: IBM Plex Sans Condensed;' textLength='18.53px' lengthAdjust='spacingAndGlyphs'>Vyšší</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='48.39' y='61.53' style='font-size: 8.80px; fill: #4D4D4D; font-family: IBM Plex Sans Condensed;' textLength='29.59px' lengthAdjust='spacingAndGlyphs'>Nejvyšší</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='5.98' y='19.18' style='font-size: 13.20px; font-weight: bold; font-family: IBM Plex Sans;' textLength='31.90px' lengthAdjust='spacingAndGlyphs'>Podíl</text></g>
+</svg>
