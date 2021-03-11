@@ -119,7 +119,7 @@ csi_okres_pokryti <- mdff %>%
 
 ```{r map-kraj-csi-priorita}
 g_poly_kraje %>% 
-  left_join(csi_kraj_priorita, by = c(id = "kraj_kod")) %>% 
+  left_join(csi_kraj_priorita) %>% 
   drop_na(typskoly_txt) %>% 
   ggplot(aes(fill = priorita)) +
   geom_sf(colour = "grey80") +
@@ -131,7 +131,7 @@ g_poly_kraje %>%
 
 ```{r map-kraj-csi-pokryti}
 g_poly_kraje %>% 
-  left_join(csi_kraj_pokryti, by = c(id = "kraj_kod")) %>% 
+  left_join(csi_kraj_pokryti) %>% 
   drop_na(skola_druh_nazev) %>% 
   ggplot(aes(fill = csi)) +
   geom_sf(colour = "grey80") + 
@@ -145,14 +145,14 @@ g_poly_kraje %>%
 
 ```{r map-okres-csi-pokryti}
 crossing(typskoly_txt = unique(csi_okres_priorita$typskoly_txt),
-         okres_kod = unique(g_poly_okresy$KOD_LAU1)) %>% 
+         okres_kod = unique(g_poly_okresy$okres_kod)) %>% 
   full_join(csi_okres_pokryti) %>% 
-  full_join(g_poly_okresy,  by = c(okres_kod = "KOD_LAU1")) %>% 
+  full_join(g_poly_okresy) %>% 
   # make the Prague polygon with no CSI data a SS polygon
   replace_na(list(skola_druh_nazev = "Střední škola")) %>% 
   # add the Prague polygon for our ZS map
   bind_rows(g_poly_okresy %>% 
-              filter(KOD_LAU1 == "CZ0100") %>% 
+              filter(okres_kod == "CZ0100") %>% 
               mutate(skola_druh_nazev = "Základní škola")) %>% 
   st_as_sf() %>%
   ggplot(aes(fill = csi)) +
@@ -167,9 +167,9 @@ crossing(typskoly_txt = unique(csi_okres_priorita$typskoly_txt),
 ```{r map-okres-csi-priorita}
 
 crossing(typskoly_txt = unique(csi_okres_priorita$typskoly_txt),
-         okres_kod = unique(g_poly_okresy$KOD_LAU1)) %>% 
+         okres_kod = unique(g_poly_okresy$okres_kod)) %>% 
   left_join(csi_okres_priorita) %>% 
-  full_join(g_poly_okresy,  by = c(okres_kod = "KOD_LAU1")) %>% 
+  full_join(g_poly_okresy) %>% 
   replace_na(list(typskoly_txt = "Střední škola")) %>% 
   st_as_sf() %>% 
   ggplot(aes(fill = priorita)) +
