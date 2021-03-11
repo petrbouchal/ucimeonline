@@ -58,6 +58,10 @@ a.navbar-link {
 
 h1, h2, h3, h4, h5 {color: rgb(97,97,97);}
 
+h2 {
+  font-size: 20px;
+}
+
 h1.title {
   display: none;
 }
