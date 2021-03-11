@@ -101,8 +101,10 @@ geocode_osm <- function(data, variable) {
 identify_unmatched_airtable_rows <- function(at_with_ids, at_manual_ids) {
   at_with_ids %>%
     filter(is.na(red_izo) | !is.na(red_izo) & (is.na(izo) | is.na(skola_druh_kod))) %>%
-    filter(!id %in% at_manual_ids$id[is.na(at_manual_ids$red_izo)]) %>%
+    mutate(in_manual_table = id %in% at_manual_ids$id,
+           has_manual_redizo = id %in% at_manual_ids$id[is.na(at_manual_ids$red_izo)]) %>%
+    filter(!has_manual_redizo) %>%
     select(id, red_izo, izo, skola_druh_kod, nazev_skoly_expanded, nazev_skoly, adresa_lower,
-           reg_match_type) %>%
+           reg_match_type, in_manual_table) %>%
     as_tibble()
 }
