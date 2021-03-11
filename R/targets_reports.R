@@ -1,6 +1,6 @@
 t_reports <- list(
   tar_file(siteconf, "_site.yml"),
-  tar_file(siteoutput, "_output.yml"),
+  tar_file(siteoutput, "_embed.yml"),
   tar_file(sitefiles, "sitefiles"),
   # https://github.com/jdblischak/workflowr/issues/238#issuecomment-782024069
 
@@ -35,6 +35,6 @@ t_reports <- list(
   tar_file(html_embed, command = {!! tar_knitr_deps_expr("index.Rmd")
     sitefiles
     render_nosite(rmd_index, "docs/embed/index.html", "docs/embed", siteoutput)
-    fs::file_copy(sitefiles, "docs/embed/")
+    fs::dir_copy(sitefiles, "docs/embed/sitefiles", overwrite = T)
     "docs/embed/index.html"})
 )
