@@ -107,9 +107,11 @@ t_geodata <- list(
   # tar_file(g_struktura_zip, curl_download(g_struktura_url, here::here("data-input/ruian_hierarchie.zip"))),
   tar_file(g_adresy_arrowds, build_address_arrowds(g_adresy_zip, "data-processed/adresni-mista")),
   tar_target(g_school_coords, build_school_coords(g_adresy_arrowds, sch_adr_sch, sch_slct_izo)),
-  tar_target(g_poly_kraje, giscoR::gisco_get_nuts(nuts_level = 3, country = "CZE")),
+  tar_target(g_poly_kraje, giscoR::gisco_get_nuts(nuts_level = 3, country = "CZE") %>%
+               rename(kraj_kod = id)),
   tar_target(g_poly_okresy, RCzechia::okresy(resolution = "low") %>%
-               rename(geometry = GeneralizovaneHranice) %>%
+               rename(geometry = GeneralizovaneHranice,
+                      okres_kod = KOD_LAU1) %>%
                st_set_geometry("geometry"))
 )
 
