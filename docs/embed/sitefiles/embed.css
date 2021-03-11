@@ -56,7 +56,11 @@ a.navbar-link {
     background-color: #fff !important;
 }
 
-h1, h2, h3, h4, h5 {color: #0000ff;}
+h1, h2, h3, h4, h5 {color: rgb(97,97,97);}
+
+h1.title {
+  display: none;
+}
 
 .bs-callout {
     margin:20px 0;
@@ -133,28 +137,27 @@ h1, h2, h3, h4, h5 {color: #0000ff;}
 .nav-pills>li.active>a,
 .nav-pills>li.active>a:focus,
 .nav-pills>li.active>a:hover {
-    color:#fff;
-    background-color:#00f
-}
-
-
-.nav-tabs>li.active>a.focus
-.nav-tabs>li.active>a.hover {
-    background-color: #00f;
-    color:blue;
-    border-color: #00f #00f #ddd;
-}
-
-.nav>li>a {
-    padding: 3px 8px;
+ color:#fff;
+ background-color:#00f
 }
 
 .nav-tabs>li>a {
-    color: grey;
-    border-color: transparent;
+  color: rgb(97,97,97);
 }
 
-.nav-tabs>li>a:hover {
-    border-color: red red #ddd;
-    background-color: red;
+.nav-tabs>li>a:hover,
+.nav-tabs>li>a:active {
+  border-color: #eee #eee #ddd;
+  color: #00f;
 }
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:active,
+.nav-tabs>li.active>a:focus {
+  color: #00f;
+}
+
+.nav>li>a {
+  padding: 3px 8px;
+}
+
