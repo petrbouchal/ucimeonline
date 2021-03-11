@@ -1,6 +1,5 @@
 ---
 title: "Učíme online: rok podpory škol"
-output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -26,9 +25,9 @@ targets::tar_load(at_with_mdf_flat)
 
 ## Které školy si řekly o pomoc {.tabset}
 
-### Podle velikosti školy
+### Kapacita škol
 
-```{r, fig.height=4}
+```{r, fig.height=2.5}
 mdf_with_at_mark_flat %>% 
   filter(skola_druh_kod %in% c("B00", "C00")) %>% 
   mutate(skola_typ = fct_recode(skola_druh_kod, 
@@ -39,13 +38,13 @@ mdf_with_at_mark_flat %>%
   ggplot(aes(x = help_requested, y = kapacita_kat)) +
   geom_col() +
   theme_ptrr("x", multiplot = T, legend.position = "bottom") +
-  scale_x_percent_cz() +
+  scale_x_percent_cz(expand = flush_axis) +
   facet_wrap(~ skola_typ)
 ```
 
-### Podle velikosti obce
+### Velikost obce
 
-```{r, fig.height=4}
+```{r, fig.height=2.5}
 mdf_with_at_mark_flat %>% 
   drop_na(obec_pocobyv_kat) %>% 
   filter(skola_druh_kod %in% c("B00", "C00")) %>% 
@@ -57,14 +56,14 @@ mdf_with_at_mark_flat %>%
   ggplot(aes(x = help_requested, y = obec_pocobyv_kat)) +
   geom_col() +
   theme_ptrr("x", multiplot = T, legend.position = "bottom") +
-  scale_x_percent_cz() +
+  scale_x_percent_cz(expand = flush_axis) +
   facet_wrap(~ skola_typ)
 ```
 
 
-### Podle okresu
+### Okres
 
-```{r}
+```{r, fig.height=3}
 mdf_with_at_mark_flat %>% 
   replace_na(list(help_requested = FALSE)) %>% 
   filter(skola_druh_kod %in% c("B00", "C00")) %>% 
@@ -73,7 +72,7 @@ mdf_with_at_mark_flat %>%
                                 `Základní školy` = "B00")) %>% 
   group_by(okres_kod, skola_typ) %>% 
   summarise(help_requested = mean(help_requested, na.rm = T)) %>% 
-  left_join(g_poly_okresy %>% rename(okres_kod = KOD_LAU1)) %>% 
+  left_join(g_poly_okresy) %>% 
   st_as_sf() %>% 
   ggplot(aes(fill = help_requested)) +
   geom_sf(colour = "grey80") +
@@ -86,9 +85,9 @@ mdf_with_at_mark_flat %>%
 
 ```
 
-### Podle priority ČŠI
+### Priorita ČŠI
 
-```{r, fig.height=4}
+```{r, fig.height=2.5}
 mdf_with_at_mark_flat %>% 
   filter(skola_druh_kod %in% c("B00", "C00")) %>% 
   mutate(skola_typ = fct_recode(skola_druh_kod, 
@@ -102,13 +101,13 @@ mdf_with_at_mark_flat %>%
   ggplot(aes(y = csi_priorita, x = help_requested)) +
   geom_col() +
   facet_wrap(~skola_typ) +
-  scale_x_percent_cz() +
+  scale_x_percent_cz(expand = flush_axis) +
   labs(title = "Podíl") +
   theme_ptrr("x", multiplot = T)
 
 ```
 
-### Podle používané technologie
+### Používané technologie
 
 ```{r, fig.height=2}
 mdf_with_at_mark_flat %>% 
@@ -126,7 +125,7 @@ mdf_with_at_mark_flat %>%
   ggplot(aes(y = google_or_ms, x = help_requested)) +
   geom_col() +
   facet_wrap(~skola_typ) +
-  scale_x_percent_cz() +
+  scale_x_percent_cz(expand = flush_axis) +
   theme_ptrr("x", multiplot = T)
 ```
 
@@ -134,7 +133,7 @@ mdf_with_at_mark_flat %>%
 
 ### Podle stupně
 
-```{r}
+```{r, fig.height=2.5}
 at_with_mdf_flat %>% 
   mutate(ym = floor_date(timestamp, "month"),
          stupen = fct_rev(stupen)) %>% 
@@ -143,15 +142,15 @@ at_with_mdf_flat %>%
   ggplot(aes(ym, n, fill = stupen)) +
   geom_col() +
   scale_fill_brewer() +
-  scale_x_datetime(labels = label_date_short(),
-                   date_breaks = "1 month") +
+  scale_x_datetime(labels = label_date_short(), date_breaks = "1 month", 
+                   expand = expansion(add = c(24*3600*14, 24*3600*14))) +
   theme_ptrr("y")
 ```
 
-### Podle priority dle ČŠI
+### Podle priority ČŠI
 
 ```{r}
-at_with_mdf_flat %>% 
+gg_at_podil_csi <- at_with_mdf_flat %>% 
   mutate(ym = floor_date(timestamp, "month"),
          stupen = fct_rev(stupen)) %>% 
   mutate(skola_typ = fct_recode(skola_druh_kod, 
@@ -168,26 +167,23 @@ at_with_mdf_flat %>%
   ggplot(aes(ym, n, fill = csi_priorita)) +
   geom_col() +
   scale_fill_brewer(palette = "YlOrBr") +
-  scale_x_datetime(labels = label_date_short(), date_breaks = "1 month") +
+  scale_x_datetime(labels = label_date_short(), date_breaks = "1 month", 
+                   expand = expansion(add = c(24*3600*14, 24*3600*14))) +
   theme_ptrr("y", multiplot = T) +
-  facet_wrap(skola_typ~., nrow = 3) 
+  facet_wrap(skola_typ~., nrow = 3) + 
+  labs(fill = "Priorita dle ČŠI")
 ```
 
-## Prioritní školy podle ČŠI
-
-TO DO
-
-```{r}
-
+```{r, fig.height=3}
+gg_at_podil_csi
 ```
-
 
 ## Technologická mapa {.tabset}
 
 ### Podle velikosti obce
 
-```{r, fig.height=4}
-mdff %>% 
+```{r}
+tm_obec_pocobyv <- mdf_with_at_mark_flat %>% 
   group_by(obec_pocobyv_kat, skola_druh_nazev) %>% 
   filter(skola_druh_nazev %in% c("Střední škola", "Základní škola")) %>% 
   summarise(csi = mean(has_tech_selected, na.rm = T),
@@ -196,19 +192,24 @@ mdff %>%
             cnt = n()) %>% 
   drop_na(obec_pocobyv_kat) %>% 
   ggplot(aes(x = google_or_ms, y = obec_pocobyv_kat)) +
-  scale_x_percent_cz() +
-  facet_wrap(~ skola_druh_nazev) +
+  scale_x_percent_cz(expand = flush_axis) +
+  facet_wrap(~ fct_rev(skola_druh_nazev)) +
   theme_ptrr("x", multiplot = T) +
   geom_col() +
   labs(title = "Technologie Google/Microsoft podle velikosti obce",
        subtitle = "Podíl škol v dané kategorii, který měl buď Google nebo MS")
 ```
 
+```{r, fig.height=2.5}
+tm_obec_pocobyv
+```
+
+
 ### Podle okresu
 
 ```{r}
-crossing(skola_druh_nazev = unique(mdff$skola_druh_nazev),
-         okres_kod = unique(g_poly_okresy$KOD_LAU1)) %>%  
+tm_okres <- crossing(skola_druh_nazev = unique(mdf_with_at_mark_flat$skola_druh_nazev),
+                     okres_kod = unique(g_poly_okresy$okres_kod)) %>%  
   left_join(mdff %>% 
               mutate(okres_kod = if_else(str_detect(okres_kod, "CZ010"),
                                          "CZ0100", okres_kod)) %>% 
@@ -221,7 +222,7 @@ crossing(skola_druh_nazev = unique(mdff$skola_druh_nazev),
   mutate(skola_typ = fct_recode(skola_druh_kod, 
                                 `Střední školy` = "C00", 
                                 `Základní školy` = "B00")) %>% 
-  full_join(g_poly_okresy,  by = c(okres_kod = "KOD_LAU1")) %>% 
+  full_join(g_poly_okresy) %>% 
   st_as_sf() %>% 
   ggplot(aes(fill = google_or_ms)) +
   geom_sf(colour = "grey80") +
@@ -235,3 +236,10 @@ crossing(skola_druh_nazev = unique(mdff$skola_druh_nazev),
        subtitle = "Školy s platformou Google nebo MS")
 
 ```
+
+```{r, fig.height=3.5}
+tm_okres
+```
+
+
+
