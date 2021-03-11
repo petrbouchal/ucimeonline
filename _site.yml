@@ -15,6 +15,7 @@ navbar:
 output:
   html_document:
     css: sitefiles/extra.css
+    dev: ragg_png
     toc: false
     toc_float: false
     mathjax: null
