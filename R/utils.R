@@ -85,4 +85,11 @@ timestamp_every_n_days <- function(days) {
 
 }
 
-timestamp_every_n_days(-1) == timestamp_every_n_days(0)
+render_nosite <- function(input, output, output_dir, output_yaml) {
+  fs::file_move("_site.yml", new_path = "xsite.yml")
+
+  on.exit(fs::file_move(here::here("xsite.yml"), "_site.yml"))
+  rmarkdown::render(input, output_file = output, output_dir = output_dir,
+                    output_yaml = output_yaml)
+}
+

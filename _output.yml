@@ -1,0 +1,8 @@
+html_document:
+  css: sitefiles/embed.css
+  dev: svglite
+  toc: false
+  self_contained: false
+  toc_float: false
+  mathjax: null
+  df_print: paged
