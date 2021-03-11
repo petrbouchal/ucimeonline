@@ -93,3 +93,16 @@ render_nosite <- function(input, output, output_dir, output_yaml) {
                     output_yaml = output_yaml)
 }
 
+theme_uo <- function(gridlines = c("y", "x", "both", "scatter", "none"),
+                     base_size = 11, family = "Roboto Condensed", title_family = "Roboto",
+                     multiplot = FALSE, tonecol = ptclr_l, margin_side = 6, margin_bottom = 6,
+                     plot.title.position = "plot", axis_titles = FALSE, richtext = FALSE,
+                     map = FALSE, ...) {
+  theme_ptrr(gridlines = gridlines,
+             base_size = base_size, family = family, title_family = title_family,
+             multiplot = multiplot, tonecol = tonecol, margin_side = margin_side, margin_bottom = margin_bottom,
+             plot.title.position = plot.title.position, axis_titles = axis_titles, richtext = richtext,
+             map = map, ...)
+
+}
+

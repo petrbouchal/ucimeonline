@@ -22,7 +22,7 @@ csi_summary %>%
   geom_line() +
   geom_point(size = 3) +
   scale_y_percent_cz(expand = c(0.1, 0)) +
-  theme_ptrr("both") +
+  theme_uo("both") +
   labs(title = "Využívání technologií ve školách",
        subtitle = "Podíl škol, které v dotazníku ČŠI uvedly nějakou technologii\npodle priority ČŠI a stupně školy")
 ```
@@ -35,7 +35,7 @@ csi_summary %>%
   ggplot() +
   geom_col(aes(y = name, x = value)) +
   facet_grid(fct_rev(priorita)~typskoly_txt) +
-  theme_ptrr("x", multiplot = T) +
+  theme_uo("x", multiplot = T) +
   scale_x_percent_cz(expand = expansion(c(0, 0.05))) +
   scale_y_discrete(labels = c(only_whatsapp = "Jen WhatsApp",
                               has_ms = "MS Teams/O365",
@@ -57,7 +57,7 @@ csi_recoded %>%
   geom_col() +
   facet_grid(fct_rev(priorita)~typskoly_txt) +
   scale_fill_discrete(guide = NULL) +
-  theme_ptrr("x") +
+  theme_uo("x") +
   labs(title = "Využívání technologii - detail",
        subtitle = "Počet škol, z dotazníku ČŠI, priorita dle ČŠI")
 ```
@@ -90,7 +90,7 @@ csi_recoded %>%
                  fill = after_scale(colorspace::lighten(fill)))) +
   scale_fill_continuous(labels = ptrr::label_percent_cz(1)) +
   facet_wrap(~ typskoly_txt) +
-  ptrr::theme_ptrr("none")
+  theme_uo("none")
 
 ```
 
@@ -125,7 +125,7 @@ g_poly_kraje %>%
   geom_sf(colour = "grey80") +
   scale_fill_binned(type = "viridis", name = "Průměrná priorita") +
   facet_wrap(~typskoly_txt) +
-  theme_ptrr(map = T, multiplot = T, legend.position = "bottom",
+  theme_uo(map = T, multiplot = T, legend.position = "bottom",
              legend.key.width = unit(1, "cm"), legend.key.height = unit(.3, "cm"))
 ```
 
@@ -137,7 +137,7 @@ g_poly_kraje %>%
   geom_sf(colour = "grey80") + 
   scale_fill_viridis_b(direction = 1, labels = label_percent_cz(1),
                        name = "Podíl škol zahrnutých v seznamu ČŠI") +
-  theme_ptrr(multiplot = T, legend.position = "bottom", map = TRUE,
+  theme_uo(multiplot = T, legend.position = "bottom", map = TRUE,
              legend.key.width = unit(1, "cm"), 
              legend.key.height = unit(.3, "cm")) +
   facet_wrap(~skola_druh_nazev)
@@ -158,7 +158,7 @@ crossing(typskoly_txt = unique(csi_okres_priorita$typskoly_txt),
   ggplot(aes(fill = csi)) +
   geom_sf(aes(), colour = "white") +
   scale_fill_viridis_b(labels = label_percent_cz(1)) +
-  theme_ptrr(multiplot = T, legend.position = "bottom", map = TRUE,
+  theme_uo(multiplot = T, legend.position = "bottom", map = TRUE,
              legend.key.width = unit(1, "cm"), 
              legend.key.height = unit(.3, "cm")) +
   facet_wrap(~fct_rev(skola_druh_nazev))
@@ -176,7 +176,7 @@ crossing(typskoly_txt = unique(csi_okres_priorita$typskoly_txt),
   geom_sf(colour = "white") +
   facet_wrap(~typskoly_txt) +
   scale_fill_fermenter(direction = 1) +
-  theme_ptrr(multiplot = T, legend.position = "bottom", map = TRUE,
+  theme_uo(multiplot = T, legend.position = "bottom", map = TRUE,
              legend.key.width = unit(1, "cm"), 
              legend.key.height = unit(.3, "cm"))
 ```

@@ -12,7 +12,7 @@ Sys.setlocale(locale = "cs_CZ.UTF-8", category = "LC_ALL")
 options(scipen = 100)
 
 ptrr::set_geom_defaults()
-ptrr::set_ptrr_ggplot_fonts()
+ptrr::set_ptrr_ggplot_fonts("Roboto Condensed")
 
 targets::tar_load(mdf)
 targets::tar_load(mdff)
@@ -37,7 +37,7 @@ mdf_with_at_mark_flat %>%
   summarise(help_requested = mean(help_requested, na.rm = T)) %>% 
   ggplot(aes(x = help_requested, y = kapacita_kat)) +
   geom_col() +
-  theme_ptrr("x", multiplot = T, legend.position = "bottom") +
+  theme_uo("x", multiplot = T, legend.position = "bottom") +
   scale_x_percent_cz(expand = flush_axis) +
   facet_wrap(~ skola_typ)
 ```
@@ -55,7 +55,7 @@ mdf_with_at_mark_flat %>%
   summarise(help_requested = mean(help_requested, na.rm = T)) %>% 
   ggplot(aes(x = help_requested, y = obec_pocobyv_kat)) +
   geom_col() +
-  theme_ptrr("x", multiplot = T, legend.position = "bottom") +
+  theme_uo("x", multiplot = T, legend.position = "bottom") +
   scale_x_percent_cz(expand = flush_axis) +
   facet_wrap(~ skola_typ)
 ```
@@ -78,7 +78,7 @@ mdf_with_at_mark_flat %>%
   geom_sf(colour = "grey80") +
   scale_fill_viridis_b(labels = label_percent_cz(1),
                        name = "Podíl škol v okrese") +
-  theme_ptrr(map = T, multiplot = T, legend.position = "bottom",
+  theme_uo(map = T, multiplot = T, legend.position = "bottom",
              legend.key.width = unit(1, "cm"), 
              legend.key.height = unit(.3, "cm")) +
   facet_wrap(~ skola_typ)
@@ -103,7 +103,7 @@ mdf_with_at_mark_flat %>%
   facet_wrap(~skola_typ) +
   scale_x_percent_cz(expand = flush_axis) +
   labs(title = "Podíl") +
-  theme_ptrr("x", multiplot = T)
+  theme_uo("x", multiplot = T)
 
 ```
 
@@ -126,7 +126,7 @@ mdf_with_at_mark_flat %>%
   geom_col() +
   facet_wrap(~skola_typ) +
   scale_x_percent_cz(expand = flush_axis) +
-  theme_ptrr("x", multiplot = T)
+  theme_uo("x", multiplot = T)
 ```
 
 ## Poptávky v čase {.tabset}
@@ -144,7 +144,7 @@ at_with_mdf_flat %>%
   scale_fill_brewer() +
   scale_x_datetime(labels = label_date_short(), date_breaks = "1 month", 
                    expand = expansion(add = c(24*3600*14, 24*3600*14))) +
-  theme_ptrr("y")
+  theme_uo("y")
 ```
 
 ### Podle priority ČŠI
@@ -169,7 +169,7 @@ gg_at_podil_csi <- at_with_mdf_flat %>%
   scale_fill_brewer(palette = "YlOrBr") +
   scale_x_datetime(labels = label_date_short(), date_breaks = "1 month", 
                    expand = expansion(add = c(24*3600*14, 24*3600*14))) +
-  theme_ptrr("y", multiplot = T) +
+  theme_uo("y", multiplot = T) +
   facet_wrap(skola_typ~., nrow = 3) + 
   labs(fill = "Priorita dle ČŠI")
 ```
@@ -194,7 +194,7 @@ tm_obec_pocobyv <- mdf_with_at_mark_flat %>%
   ggplot(aes(x = google_or_ms, y = obec_pocobyv_kat)) +
   scale_x_percent_cz(expand = flush_axis) +
   facet_wrap(~ fct_rev(skola_druh_nazev)) +
-  theme_ptrr("x", multiplot = T) +
+  theme_uo("x", multiplot = T) +
   geom_col() +
   labs(title = "Technologie Google/Microsoft podle velikosti obce",
        subtitle = "Podíl škol v dané kategorii, který měl buď Google nebo MS")
@@ -228,7 +228,7 @@ tm_okres <- crossing(skola_druh_nazev = unique(mdf_with_at_mark_flat$skola_druh_
   geom_sf(colour = "grey80") +
   scale_fill_viridis_b(labels = label_percent_cz(),
                        name = "Podíl škol v okrese") +
-  theme_ptrr(map = T, multiplot = T, legend.position = "bottom",
+  theme_uo(map = T, multiplot = T, legend.position = "bottom",
              legend.key.width = unit(1, "cm"), 
              legend.key.height = unit(.3, "cm")) +
   facet_wrap(~ skola_typ) +
