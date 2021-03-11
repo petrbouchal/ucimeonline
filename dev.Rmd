@@ -7,6 +7,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
-tar_visnetwork()
+# tar_visnetwork()
 ```
 
