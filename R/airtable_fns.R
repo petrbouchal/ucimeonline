@@ -56,6 +56,7 @@ at_process <- function(data, sch_reg_org, sch_reg_sch, sch_adr_org, at_manual_id
     rename(stupen = pro_jaky_stupen_hledate_pomoc) %>%
     mutate(skola_druh_kod = case_when(str_detect(nazev_skoly_expanded, "[Dd][ůŮ][Mm]") ~ "G11",
                                       str_detect(nazev_skoly_expanded, "ákladní umělecká škola") ~ "F10",
+                                      str_detect(nazev_skoly_expanded, "^[Vv]yšší odb") ~ "E00",
                                       stupen == "Střední škola" ~ "C00",
                                       str_detect(stupen, "základní") ~ "B00"))
 }
