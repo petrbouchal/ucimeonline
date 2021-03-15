@@ -138,12 +138,13 @@ h1, h2, h3, h4, h5 {color: #0000ff;}
 }
 
 .nav-tabs>li>a {
-  color: "e3f1ff";
+  color: rgb(97,97, 97);
 }
 
 .nav-tabs>li>a:hover,
 .nav-tabs>li>a:active {
   border-color: #e3f1ff #e3f1ff #ddd;
+  background-color: #e3f1ff;
   color: #00f;
 }
 

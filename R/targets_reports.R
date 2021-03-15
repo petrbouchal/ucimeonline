@@ -36,5 +36,14 @@ t_reports <- list(
     sitefiles
     render_nosite(rmd_index, "docs/embed/index.html", "docs/embed", siteoutput)
     fs::dir_copy(sitefiles, "docs/embed/sitefiles", overwrite = T)
-    "docs/embed/index.html"})
+    "docs/embed/index.html"}),
+
+  tar_file(rmd_embed_imglist, "embed-image-list.Rmd"),
+  tar_file(html_embed_imglist, command = {!! tar_knitr_deps_expr("embed-image-list.Rmd")
+    sitefiles
+    html_embed
+    rmd_index
+    render_nosite(rmd_embed_imglist, "docs/embed/list.html", "docs/embed", siteoutput)
+    fs::dir_copy(sitefiles, "docs/embed/sitefiles", overwrite = T)
+    "docs/embed/list.html"})
 )
