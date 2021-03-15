@@ -1,0 +1,35 @@
+---
+title: "URL obrázků do datastudia"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+imgpaths <- fs::dir_ls(here::here("docs/embed/index_files/figure-html/"))
+imgnames <- basename(imgpaths)
+```
+
+```{r}
+image_item <- function(name, 
+                       urlbase = "https://ucimeonline.petrbouchal.xyz/embed/index_files/figure-html/") {
+  
+  url <- paste0(urlbase, name)
+  cat(paste0("`", url, "`"))
+  cat("\n\n")
+  cat("<br />")
+  cat("\n\n")
+  cat(paste0("<img src = 'index_files/figure-html/", name, "'>"))
+  cat("\n\n")
+  cat("<br />")
+  cat("\n\n")
+  return(NULL)
+}
+```
+
+```{r, results='asis'}
+purrr::walk(imgnames, image_item)
+```
+

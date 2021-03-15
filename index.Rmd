@@ -27,7 +27,7 @@ targets::tar_load(at_with_mdf_flat)
 
 ### Kapacita škol
 
-```{r, fig.height=2.5}
+```{r prihlasene-procento-kapacita, fig.height=2.5}
 mdf_with_at_mark_flat %>% 
   filter(skola_druh_kod %in% c("B00", "C00")) %>% 
   mutate(skola_typ = fct_recode(skola_druh_kod, 
@@ -44,7 +44,7 @@ mdf_with_at_mark_flat %>%
 
 ### Velikost obce
 
-```{r, fig.height=2.5}
+```{r prihlasene-procento-velikobce, fig.height=2.5}
 mdf_with_at_mark_flat %>% 
   drop_na(obec_pocobyv_kat) %>% 
   filter(skola_druh_kod %in% c("B00", "C00")) %>% 
@@ -63,7 +63,7 @@ mdf_with_at_mark_flat %>%
 
 ### Okres
 
-```{r, fig.height=3}
+```{r prihlasene-procento-okres, fig.height=3}
 mdf_with_at_mark_flat %>% 
   replace_na(list(help_requested = FALSE)) %>% 
   filter(skola_druh_kod %in% c("B00", "C00")) %>% 
@@ -87,7 +87,7 @@ mdf_with_at_mark_flat %>%
 
 ### Priorita ČŠI
 
-```{r, fig.height=2.5}
+```{r prihlasene-procento-prioritacsi, fig.height=2.5}
 mdf_with_at_mark_flat %>% 
   filter(skola_druh_kod %in% c("B00", "C00")) %>% 
   mutate(skola_typ = fct_recode(skola_druh_kod, 
@@ -109,7 +109,7 @@ mdf_with_at_mark_flat %>%
 
 ### Používané technologie
 
-```{r, fig.height=2}
+```{r prihlasene-procento-technologie, fig.height=2}
 mdf_with_at_mark_flat %>% 
   filter(skola_druh_kod %in% c("B00", "C00")) %>% 
   mutate(skola_typ = fct_recode(skola_druh_kod, 
@@ -133,7 +133,7 @@ mdf_with_at_mark_flat %>%
 
 ### Podle stupně
 
-```{r, fig.height=2.5}
+```{r poptavky-mesice-stupen, fig.height=2.5}
 at_with_mdf_flat %>% 
   mutate(ym = floor_date(timestamp, "month"),
          stupen = fct_rev(stupen)) %>% 
@@ -149,7 +149,7 @@ at_with_mdf_flat %>%
 
 ### Podle priority ČŠI
 
-```{r}
+```{r poptavky-mesice-prioritacsi-make}
 gg_at_podil_csi <- at_with_mdf_flat %>% 
   mutate(ym = floor_date(timestamp, "month"),
          stupen = fct_rev(stupen)) %>% 
@@ -174,7 +174,7 @@ gg_at_podil_csi <- at_with_mdf_flat %>%
   labs(fill = "Priorita dle ČŠI")
 ```
 
-```{r, fig.height=3}
+```{r poptavky-mesice-prioritacsi, fig.height=3}
 gg_at_podil_csi
 ```
 
@@ -182,7 +182,7 @@ gg_at_podil_csi
 
 ### Podle velikosti obce
 
-```{r}
+```{r techmapa-velobce-make}
 tm_obec_pocobyv <- mdf_with_at_mark_flat %>% 
   group_by(obec_pocobyv_kat, skola_druh_nazev) %>% 
   filter(skola_druh_nazev %in% c("Střední škola", "Základní škola")) %>% 
@@ -200,14 +200,14 @@ tm_obec_pocobyv <- mdf_with_at_mark_flat %>%
        subtitle = "Podíl škol v dané kategorii, který měl buď Google nebo MS")
 ```
 
-```{r, fig.height=2.5}
+```{r techmapa-velobce, fig.height=2.5}
 tm_obec_pocobyv
 ```
 
 
 ### Podle okresu
 
-```{r}
+```{r techmapa-okres-make}
 tm_okres <- crossing(skola_druh_nazev = unique(mdf_with_at_mark_flat$skola_druh_nazev),
                      okres_kod = unique(g_poly_okresy$okres_kod)) %>%  
   left_join(mdff %>% 
@@ -237,7 +237,7 @@ tm_okres <- crossing(skola_druh_nazev = unique(mdf_with_at_mark_flat$skola_druh_
 
 ```
 
-```{r, fig.height=3.5}
+```{r techmapa-okres, fig.height=3.5}
 tm_okres
 ```
 
