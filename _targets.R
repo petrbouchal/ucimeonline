@@ -1,10 +1,12 @@
 library(targets)
 library(tarchetypes)
+library(future)
 
 
 # Targets setup -----------------------------------------------------------
 
 options(czso.dest_dir = "data-input/czso")
+
 
 # Set target-specific options such as packages.
 
@@ -15,8 +17,10 @@ tar_option_set(packages = c("dplyr", "tidyr", "stringr", "lubridate",
                             "readr", "readxl", "curl", "purrr", "targets",
                             "tarchetypes", "forcats", "ptrr", "czso", "santoku",
                             "pointblank", "airtabler", "googledrive",
-                            "scales", "ggiraph"),
+                            "scales", "ggiraph", "stringi", "furrr", "future"),
                imports = c("vsezved"))
+
+plan(multisession)
 
 # Config ------------------------------------------------------------------
 
@@ -154,7 +158,7 @@ t_mpo <- list(
 
 # DNS technical scan data -------------------------------------------------
 
-t_dns <- list(
+t_dns_scan_orig <- list(
   tar_change(dns_df, load_dns_gsheet(tech_sheet_id), gdrive_modified(tech_sheet_id)),
   tar_file(dns_pq, write_parquet_pth(dns_df, "data-processed/dns.parquet")),
   tar_target(dns_gqt, {try(bigrquery::bq_table_delete(bq_table(bq_project, bq_dataset, "dns")))
@@ -162,6 +166,21 @@ t_dns <- list(
                                values = dns_df)})
 )
 
+tech_rescan_tab_name <- cnf$tech_rescan_tab_name
+
+t_dns_scan_new <- list(
+  tar_target(adr_for_scan, sch_adr_sch %>%
+               filter(izo %in% sch_slct_izo) %>%
+               select(red_izo, izo, www) %>%
+               mutate(domena_skoly = domain_from_www(www))),
+  tar_target(dns_rescan_mx,  scan_dns(adr_for_scan, type = "MX",  n = NA)),
+  tar_target(dns_rescan_txt, scan_dns(adr_for_scan, type = "TXT", n = NA)),
+  tar_target(dns_rescan, left_join(dns_rescan_txt %>% rename(dig_txt = dig_data),
+                                   dns_rescan_mx %>%  rename(dig_mx  = dig_data)) %>%
+               rename(domena_skoly_new = domena_skoly)),
+  tar_target(dns_new, resolve_dns(dns_rescan)),
+  tar_target(dns_new_gsheet, sheet_write(dns_new, tech_sheet_id, tech_rescan_tab_name))
+)
 
 # Airtable data from UO ---------------------------------------------------
 
@@ -236,5 +255,5 @@ source("R/targets_reports.R") # creates the t_reports list
 
 # Collate targets----------------------------------------------------------
 
-list(t_bquery_conn, t_dns, t_skoly_metadata, t_geodata, t_csi, t_mpo,
-     t_merge, t_reports, t_uzemistats, t_export, t_airtable)
+list(t_bquery_conn, t_dns_scan_orig, t_skoly_metadata, t_geodata, t_csi, t_mpo,
+     t_merge, t_reports, t_uzemistats, t_export, t_airtable, t_dns_scan_new)

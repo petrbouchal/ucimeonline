@@ -1,5 +1,6 @@
 default:
   tech_sheet_id: "1ohis0XYklKjIdhbdh1Ca_0qKy-etXQhw1EiEXFfBAdI"
+  tech_rescan_tab_name: "dns_rescan"
 
   output_sheet_id: "1WKZrK3MCzsNpcG1lCq7gV0s56z-2wcKeq4IWDaCO9ws"
   output_sheet_tabname_base: "base_data_with_airtable_marker"
