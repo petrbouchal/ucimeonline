@@ -221,7 +221,7 @@ t_airtable <- list(
 # Merge data --------------------------------------------------------------
 
 t_merge <- list(
-  tar_target(mdf, merge_data(dns_df, csi_summary, mpo, g_school_coords,
+  tar_target(mdf, merge_data(dns_df, dns_new, csi_summary, mpo, g_school_coords,
                              sch_adr_org, sch_adr_sch, sch_reg_org, sch_reg_sch,
                              stat_obyv_obce)),
   tar_target(mdff, mdf %>% st_drop_geometry()),

@@ -8,7 +8,7 @@
 ##' @return
 ##' @author Petr Bouchal
 ##' @export
-merge_data <- function(dns_df, csi_summary, mpo,
+merge_data <- function(dns_df, dns_new, csi_summary, mpo,
                        g_school_coords,
                        sch_adr_org,
                        sch_adr_sch,
@@ -32,6 +32,12 @@ merge_data <- function(dns_df, csi_summary, mpo,
   reg_sch <- sch_reg_sch %>%
     select(red_izo, izo, skola_druh_kod = skola_druh_typ)
 
+  dns_new <- dns_new %>%
+    select(red_izo, izo, domena_skoly_new,
+           dns_new_gsuite = g_suite_nalezen_new,
+           dns_new_o365 = nalezen_o365_new,
+           dns_new_odhad_sluzba = odhadovana_sluzba_new)
+
   mdfr <- g_school_coords %>%
     left_join(reg_org) %>%
     left_join(reg_sch) %>%
@@ -40,6 +46,7 @@ merge_data <- function(dns_df, csi_summary, mpo,
     left_join(stat_obyv_obce) %>%
     left_join(csi_summary %>% select(-izo)) %>%
     left_join(mpo %>% select(-kod_adm, -ico, -zrizovatel)) %>%
+    left_join(dns_new) %>%
     left_join(dns_df) %>%
     rename(csi_has_google = has_google,
            csi_has_ms = has_ms,
