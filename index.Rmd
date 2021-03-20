@@ -25,6 +25,9 @@ targets::tar_load(at_with_mdf_flat)
 
 ## Které školy si řekly o pomoc {.tabset}
 
+100 % = všechny školy v dané kategorii
+<span style='color: blue'>**modrý sloupec**</span>: škol, kreré se přihlásily o podporu Učíme online
+
 ### Kapacita škol
 
 ```{r prihlasene-procento-kapacita, fig.height=2.5}
