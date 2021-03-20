@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 504.00 144.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    line, polyline, polygon, path, rect, circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA=='>
+    <rect x='87.91' y='51.90' width='410.11' height='59.87' />
+  </clipPath>
+</defs>
+<rect x='87.91' y='51.90' width='410.11' height='59.87' style='stroke-width: 1.07; stroke: none; fill: #E3F1FF;' clip-path='url(#cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA==)' />
+<polyline points='87.91,111.77 87.91,51.90 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA==)' />
+<polyline points='157.75,111.77 157.75,51.90 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA==)' />
+<polyline points='227.59,111.77 227.59,51.90 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA==)' />
+<polyline points='297.42,111.77 297.42,51.90 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA==)' />
+<polyline points='367.26,111.77 367.26,51.90 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA==)' />
+<polyline points='437.10,111.77 437.10,51.90 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA==)' />
+<line x1='429.67' y1='66.87' x2='275.39' y2='66.87' style='stroke-width: 2.13; stroke: #B3B3B3; stroke-linecap: butt;' clip-path='url(#cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA==)' />
+<line x1='317.86' y1='96.80' x2='236.22' y2='96.80' style='stroke-width: 2.13; stroke: #B3B3B3; stroke-linecap: butt;' clip-path='url(#cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA==)' />
+<circle cx='275.39' cy='66.87' r='4.09' style='stroke-width: 0.71; stroke: #666666; fill: #666666;' clip-path='url(#cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA==)' />
+<circle cx='236.22' cy='96.80' r='4.09' style='stroke-width: 0.71; stroke: #666666; fill: #666666;' clip-path='url(#cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA==)' />
+<circle cx='429.67' cy='66.87' r='4.09' style='stroke-width: 0.71; stroke: #0000FF; fill: #0000FF;' clip-path='url(#cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA==)' />
+<circle cx='317.86' cy='96.80' r='4.09' style='stroke-width: 0.71; stroke: #0000FF; fill: #0000FF;' clip-path='url(#cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA==)' />
+<g clip-path='url(#cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA==)'><text x='242.89' y='70.41' style='font-size: 9.96px; font-weight: bold; fill: #666666; font-family: Roboto Condensed;' textLength='32.50px' lengthAdjust='spacingAndGlyphs'>   27 %   </text></g>
+<g clip-path='url(#cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA==)'><text x='203.72' y='100.34' style='font-size: 9.96px; font-weight: bold; fill: #666666; font-family: Roboto Condensed;' textLength='32.50px' lengthAdjust='spacingAndGlyphs'>   21 %   </text></g>
+<g clip-path='url(#cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA==)'><text x='429.67' y='70.41' style='font-size: 9.96px; font-weight: bold; fill: #0000FF; font-family: Roboto Condensed;' textLength='32.50px' lengthAdjust='spacingAndGlyphs'>   49 %   </text></g>
+<g clip-path='url(#cpODcuOTF8NDk4LjAyfDExMS43N3w1MS45MA==)'><text x='317.86' y='100.34' style='font-size: 9.96px; font-weight: bold; fill: #0000FF; font-family: Roboto Condensed;' textLength='32.50px' lengthAdjust='spacingAndGlyphs'>   33 %   </text></g>
+<defs>
+  <clipPath id='cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA='>
+    <rect x='0.00' y='0.00' width='504.00' height='144.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='5.98' y='101.64' style='font-size: 11.00px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='37.12px' lengthAdjust='spacingAndGlyphs'>Základní</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='55.48' y='101.64' style='font-size: 11.00px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='22.59px' lengthAdjust='spacingAndGlyphs'>školy</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='11.48' y='71.71' style='font-size: 11.00px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='30.81px' lengthAdjust='spacingAndGlyphs'>Střední</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='55.48' y='71.71' style='font-size: 11.00px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='22.59px' lengthAdjust='spacingAndGlyphs'>školy</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='81.16' y='124.62' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='4.34px' lengthAdjust='spacingAndGlyphs'>0</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='90.16' y='124.62' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='5.57px' lengthAdjust='spacingAndGlyphs'>%</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='148.75' y='124.62' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='8.69px' lengthAdjust='spacingAndGlyphs'>10</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='162.25' y='124.62' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='5.57px' lengthAdjust='spacingAndGlyphs'>%</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='218.59' y='124.62' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='8.69px' lengthAdjust='spacingAndGlyphs'>20</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='232.09' y='124.62' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='5.57px' lengthAdjust='spacingAndGlyphs'>%</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='288.42' y='124.62' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='8.69px' lengthAdjust='spacingAndGlyphs'>30</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='301.92' y='124.62' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='5.57px' lengthAdjust='spacingAndGlyphs'>%</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='358.26' y='124.62' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='8.69px' lengthAdjust='spacingAndGlyphs'>40</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='371.76' y='124.62' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='5.57px' lengthAdjust='spacingAndGlyphs'>%</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='428.10' y='124.62' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='8.69px' lengthAdjust='spacingAndGlyphs'>50</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='441.60' y='124.62' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='5.57px' lengthAdjust='spacingAndGlyphs'>%</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='5.98' y='36.56' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='20.81px' lengthAdjust='spacingAndGlyphs'>Mezi</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='33.48' y='36.56' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='34.07px' lengthAdjust='spacingAndGlyphs'>školami</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='77.48' y='36.56' style='font-size: 11.00px; font-weight: bold; fill: #0000FF; font-family: Roboto Condensed;' textLength='5.00px' lengthAdjust='spacingAndGlyphs'>s</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='88.48' y='36.56' style='font-size: 11.00px; font-weight: bold; fill: #0000FF; font-family: Roboto Condensed;' textLength='41.82px' lengthAdjust='spacingAndGlyphs'>podporou</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='137.98' y='36.56' style='font-size: 11.00px; font-weight: bold; fill: #0000FF; font-family: Roboto Condensed;' textLength='27.65px' lengthAdjust='spacingAndGlyphs'>Učíme</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='170.98' y='36.56' style='font-size: 11.00px; font-weight: bold; fill: #0000FF; font-family: Roboto Condensed;' textLength='27.11px' lengthAdjust='spacingAndGlyphs'>online</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='209.48' y='36.56' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='17.79px' lengthAdjust='spacingAndGlyphs'>byla</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='236.98' y='36.56' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='5.52px' lengthAdjust='spacingAndGlyphs'>o</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='247.98' y='36.56' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='12.37px' lengthAdjust='spacingAndGlyphs'>víc</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='269.98' y='36.56' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='15.30px' lengthAdjust='spacingAndGlyphs'>než</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='291.98' y='36.56' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='36.85px' lengthAdjust='spacingAndGlyphs'>polovinu</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='341.48' y='36.56' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='21.89px' lengthAdjust='spacingAndGlyphs'>vyšší</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='374.48' y='36.56' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='31.90px' lengthAdjust='spacingAndGlyphs'>adopce</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='412.98' y='36.56' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='15.30px' lengthAdjust='spacingAndGlyphs'>než</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='434.98' y='36.56' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='5.32px' lengthAdjust='spacingAndGlyphs'>u</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='445.98' y='36.56' style='font-size: 11.00px; font-weight: bold; fill: #666666; font-family: Roboto Condensed;' textLength='41.17px' lengthAdjust='spacingAndGlyphs'>ostatních</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='5.98' y='46.43' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='16.29px' lengthAdjust='spacingAndGlyphs'>100</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='27.98' y='46.43' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='6.96px' lengthAdjust='spacingAndGlyphs'>%</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='38.98' y='46.43' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='5.27px' lengthAdjust='spacingAndGlyphs'>=</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='49.98' y='46.43' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='35.16px' lengthAdjust='spacingAndGlyphs'>všechny</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='93.98' y='46.43' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='24.75px' lengthAdjust='spacingAndGlyphs'>školy,</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='132.48' y='46.43' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='21.85px' lengthAdjust='spacingAndGlyphs'>které</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='165.48' y='46.43' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='10.59px' lengthAdjust='spacingAndGlyphs'>na</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='181.98' y='46.43' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='16.23px' lengthAdjust='spacingAndGlyphs'>jaře</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='209.48' y='46.43' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='21.72px' lengthAdjust='spacingAndGlyphs'>2020</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='236.98' y='46.43' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='31.00px' lengthAdjust='spacingAndGlyphs'>neměly</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='275.48' y='46.43' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='26.32px' lengthAdjust='spacingAndGlyphs'>Office</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='313.98' y='46.43' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='16.29px' lengthAdjust='spacingAndGlyphs'>365</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='335.98' y='46.43' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='21.42px' lengthAdjust='spacingAndGlyphs'>nebo</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='363.48' y='46.43' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='6.50px' lengthAdjust='spacingAndGlyphs'>G</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='374.48' y='46.43' style='font-size: 11.00px; font-family: Roboto Condensed;' textLength='21.94px' lengthAdjust='spacingAndGlyphs'>Suite</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='5.98' y='21.40' style='font-size: 13.20px; font-weight: bold; font-family: Roboto;' textLength='30.53px' lengthAdjust='spacingAndGlyphs'>Podíl</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='44.98' y='21.40' style='font-size: 13.20px; font-weight: bold; font-family: Roboto;' textLength='28.02px' lengthAdjust='spacingAndGlyphs'>škol,</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='83.98' y='21.40' style='font-size: 13.20px; font-weight: bold; font-family: Roboto;' textLength='30.60px' lengthAdjust='spacingAndGlyphs'>které</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='122.98' y='21.40' style='font-size: 13.20px; font-weight: bold; font-family: Roboto;' textLength='14.90px' lengthAdjust='spacingAndGlyphs'>od</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='142.48' y='21.40' style='font-size: 13.20px; font-weight: bold; font-family: Roboto;' textLength='22.40px' lengthAdjust='spacingAndGlyphs'>jara</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='174.98' y='21.40' style='font-size: 13.20px; font-weight: bold; font-family: Roboto;' textLength='30.29px' lengthAdjust='spacingAndGlyphs'>2020</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='207.48' y='21.40' style='font-size: 13.20px; font-weight: bold; font-family: Roboto;' textLength='45.16px' lengthAdjust='spacingAndGlyphs'>zavedly</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='259.48' y='21.40' style='font-size: 13.20px; font-weight: bold; font-family: Roboto;' textLength='36.09px' lengthAdjust='spacingAndGlyphs'>Office</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='304.98' y='21.40' style='font-size: 13.20px; font-weight: bold; font-family: Roboto;' textLength='22.72px' lengthAdjust='spacingAndGlyphs'>365</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='330.98' y='21.40' style='font-size: 13.20px; font-weight: bold; font-family: Roboto;' textLength='29.42px' lengthAdjust='spacingAndGlyphs'>nebo</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='363.48' y='21.40' style='font-size: 13.20px; font-weight: bold; font-family: Roboto;' textLength='42.09px' lengthAdjust='spacingAndGlyphs'>Google</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='408.98' y='21.40' style='font-size: 13.20px; font-weight: bold; font-family: Roboto;' textLength='30.60px' lengthAdjust='spacingAndGlyphs'>Suite</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='133.52' y='138.02' style='font-size: 8.80px; fill: #999999; font-family: Roboto Condensed;' textLength='20.08px' lengthAdjust='spacingAndGlyphs'>Zdroj:</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='165.02' y='138.02' style='font-size: 8.80px; fill: #999999; font-family: Roboto Condensed;' textLength='20.69px' lengthAdjust='spacingAndGlyphs'>síťový</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='196.52' y='138.02' style='font-size: 8.80px; fill: #999999; font-family: Roboto Condensed;' textLength='18.08px' lengthAdjust='spacingAndGlyphs'>sken,</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='223.52' y='138.02' style='font-size: 8.80px; fill: #999999; font-family: Roboto Condensed;' textLength='26.05px' lengthAdjust='spacingAndGlyphs'>školský</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='259.52' y='138.02' style='font-size: 8.80px; fill: #999999; font-family: Roboto Condensed;' textLength='25.81px' lengthAdjust='spacingAndGlyphs'>rejstřík,</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='304.52' y='138.02' style='font-size: 8.80px; fill: #999999; font-family: Roboto Condensed;' textLength='15.40px' lengthAdjust='spacingAndGlyphs'>data</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='327.02' y='138.02' style='font-size: 8.80px; fill: #999999; font-family: Roboto Condensed;' textLength='47.16px' lengthAdjust='spacingAndGlyphs'>Česko.digital;</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='394.52' y='138.02' style='font-size: 8.80px; fill: #999999; font-family: Roboto Condensed;' textLength='13.28px' lengthAdjust='spacingAndGlyphs'>jaro</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='417.02' y='138.02' style='font-size: 8.80px; fill: #999999; font-family: Roboto Condensed;' textLength='17.38px' lengthAdjust='spacingAndGlyphs'>2020</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='439.52' y='138.02' style='font-size: 8.80px; fill: #999999; font-family: Roboto Condensed;' textLength='4.22px' lengthAdjust='spacingAndGlyphs'>a</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='448.52' y='138.02' style='font-size: 8.80px; fill: #999999; font-family: Roboto Condensed;' textLength='23.38px' lengthAdjust='spacingAndGlyphs'>březen</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTQ0LjAwfDAuMDA=)'><text x='480.02' y='138.02' style='font-size: 8.80px; fill: #999999; font-family: Roboto Condensed;' textLength='17.38px' lengthAdjust='spacingAndGlyphs'>2021</text></g>
+</svg>
