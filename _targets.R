@@ -249,6 +249,17 @@ t_export <- list(
   tar_target(sheet_missing_ids, sheet_write(at_unmatched, manualni_id_sheet_id, sheet = manualni_id_tabname_missingids))
 )
 
+
+
+# Analyse and visualise ---------------------------------------------------
+
+t_tech_posun <- list(
+  tar_target(tp_posun_dt_kat, make_tp_data_posun_kat(mdf_with_at_mark_flat)),
+  tar_target(tp_posun_dt_diffindiff, make_tp_data_posun_diffindiff(mdf_with_at_mark_flat)),
+  tar_target(tp_posun_plt_shift, make_tp_plt_shift(tp_posun_dt_kat)),
+  tar_target(tp_posun_plt_diffindif, make_tp_plt_diffindiff(tp_posun_dt_diffindiff))
+)
+
 # Reports -----------------------------------------------------------------
 
 source("R/targets_reports.R") # creates the t_reports list
@@ -256,4 +267,5 @@ source("R/targets_reports.R") # creates the t_reports list
 # Collate targets----------------------------------------------------------
 
 list(t_bquery_conn, t_dns_scan_orig, t_skoly_metadata, t_geodata, t_csi, t_mpo,
-     t_merge, t_reports, t_uzemistats, t_export, t_airtable, t_dns_scan_new)
+     t_merge, t_reports, t_uzemistats, t_export, t_airtable, t_dns_scan_new,
+     t_tech_posun)
