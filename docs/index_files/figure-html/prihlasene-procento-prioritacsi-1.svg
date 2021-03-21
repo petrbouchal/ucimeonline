@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 504.00 180.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    line, polyline, polygon, path, rect, circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpODIuOTF8Mjg3LjczfDE2MS4xN3wyNi42NQ=='>
+    <rect x='82.91' y='26.65' width='204.82' height='134.52' />
+  </clipPath>
+</defs>
+<rect x='82.91' y='26.65' width='204.82' height='134.52' style='stroke-width: 1.07; stroke: none; fill: #E3F1FF;' clip-path='url(#cpODIuOTF8Mjg3LjczfDE2MS4xN3wyNi42NQ==)' />
+<polyline points='82.91,161.17 82.91,26.65 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpODIuOTF8Mjg3LjczfDE2MS4xN3wyNi42NQ==)' />
+<polyline points='155.05,161.17 155.05,26.65 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpODIuOTF8Mjg3LjczfDE2MS4xN3wyNi42NQ==)' />
+<polyline points='227.19,161.17 227.19,26.65 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpODIuOTF8Mjg3LjczfDE2MS4xN3wyNi42NQ==)' />
+<rect x='82.91' y='127.54' width='51.86' height='28.83' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #0000FF;' clip-path='url(#cpODIuOTF8Mjg3LjczfDE2MS4xN3wyNi42NQ==)' />
+<rect x='82.91' y='95.51' width='195.06' height='28.83' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #0000FF;' clip-path='url(#cpODIuOTF8Mjg3LjczfDE2MS4xN3wyNi42NQ==)' />
+<rect x='82.91' y='63.48' width='161.82' height='28.83' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #0000FF;' clip-path='url(#cpODIuOTF8Mjg3LjczfDE2MS4xN3wyNi42NQ==)' />
+<rect x='82.91' y='31.45' width='168.94' height='28.83' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #0000FF;' clip-path='url(#cpODIuOTF8Mjg3LjczfDE2MS4xN3wyNi42NQ==)' />
+<defs>
+  <clipPath id='cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA='>
+    <rect x='0.00' y='0.00' width='504.00' height='180.00' />
+  </clipPath>
+</defs>
+<defs>
+  <clipPath id='cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8MjYuNjU='>
+    <rect x='293.21' y='26.65' width='204.82' height='134.52' />
+  </clipPath>
+</defs>
+<rect x='293.21' y='26.65' width='204.82' height='134.52' style='stroke-width: 1.07; stroke: none; fill: #E3F1FF;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8MjYuNjU=)' />
+<polyline points='293.21,161.17 293.21,26.65 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8MjYuNjU=)' />
+<polyline points='365.35,161.17 365.35,26.65 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8MjYuNjU=)' />
+<polyline points='437.49,161.17 437.49,26.65 ' style='stroke-width: 0.64; stroke: #FFFFFF; stroke-linecap: butt;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8MjYuNjU=)' />
+<rect x='293.21' y='127.54' width='29.25' height='28.83' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #0000FF;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8MjYuNjU=)' />
+<rect x='293.21' y='95.51' width='111.49' height='28.83' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #0000FF;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8MjYuNjU=)' />
+<rect x='293.21' y='63.48' width='105.57' height='28.83' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #0000FF;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8MjYuNjU=)' />
+<rect x='293.21' y='31.45' width='122.51' height='28.83' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #0000FF;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwxNjEuMTd8MjYuNjU=)' />
+<defs>
+  <clipPath id='cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA='>
+    <rect x='0.00' y='0.00' width='504.00' height='180.00' />
+  </clipPath>
+</defs>
+<defs>
+  <clipPath id='cpODIuOTF8Mjg3LjczfDI2LjY1fDkuOTY='>
+    <rect x='82.91' y='9.96' width='204.82' height='16.69' />
+  </clipPath>
+</defs>
+<rect x='82.91' y='9.96' width='204.82' height='16.69' style='stroke-width: 1.07; stroke: none; fill: #E3F1FF;' clip-path='url(#cpODIuOTF8Mjg3LjczfDI2LjY1fDkuOTY=)' />
+<g clip-path='url(#cpODIuOTF8Mjg3LjczfDI2LjY1fDkuOTY=)'><text x='87.29' y='21.43' style='font-size: 8.80px; fill: #1A1A1A; font-family: Roboto Condensed;' textLength='49.79px' lengthAdjust='spacingAndGlyphs'>Základní školy</text></g>
+<defs>
+  <clipPath id='cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA='>
+    <rect x='0.00' y='0.00' width='504.00' height='180.00' />
+  </clipPath>
+</defs>
+<defs>
+  <clipPath id='cpMjkzLjIxfDQ5OC4wMnwyNi42NXw5Ljk2'>
+    <rect x='293.21' y='9.96' width='204.82' height='16.69' />
+  </clipPath>
+</defs>
+<rect x='293.21' y='9.96' width='204.82' height='16.69' style='stroke-width: 1.07; stroke: none; fill: #E3F1FF;' clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwyNi42NXw5Ljk2)' />
+<g clip-path='url(#cpMjkzLjIxfDQ5OC4wMnwyNi42NXw5Ljk2)'><text x='297.59' y='21.43' style='font-size: 8.80px; fill: #1A1A1A; font-family: Roboto Condensed;' textLength='44.73px' lengthAdjust='spacingAndGlyphs'>Střední školy</text></g>
+<defs>
+  <clipPath id='cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA='>
+    <rect x='0.00' y='0.00' width='504.00' height='180.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='76.95' y='172.36' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='11.93px' lengthAdjust='spacingAndGlyphs'>0 %</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='146.92' y='172.36' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='16.27px' lengthAdjust='spacingAndGlyphs'>10 %</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='219.06' y='172.36' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='16.27px' lengthAdjust='spacingAndGlyphs'>20 %</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='287.24' y='172.36' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='11.93px' lengthAdjust='spacingAndGlyphs'>0 %</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='357.21' y='172.36' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='16.27px' lengthAdjust='spacingAndGlyphs'>10 %</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='429.35' y='172.36' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='16.27px' lengthAdjust='spacingAndGlyphs'>20 %</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='18.24' y='140.33' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='59.74px' lengthAdjust='spacingAndGlyphs'>Není na seznamu</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='26.17' y='149.83' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='51.80px' lengthAdjust='spacingAndGlyphs'>prioritních škol</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='53.33' y='113.05' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='24.65px' lengthAdjust='spacingAndGlyphs'>Střední</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='59.30' y='81.02' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='18.68px' lengthAdjust='spacingAndGlyphs'>Vyšší</text></g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MTgwLjAwfDAuMDA=)'><text x='48.93' y='49.00' style='font-size: 8.80px; fill: #4D4D4D; font-family: Roboto Condensed;' textLength='29.05px' lengthAdjust='spacingAndGlyphs'>Nejvyšší</text></g>
+</svg>
