@@ -38,7 +38,8 @@ mdf_with_at_mark_flat %>%
                                 `Střední školy` = "C00", 
                                 `Základní školy` = "B00")) %>% 
   group_by(kapacita_kat, skola_typ) %>% 
-  summarise(help_requested = mean(help_requested, na.rm = T)) %>% 
+  summarise(help_requested = mean(help_requested, na.rm = T), 
+            .groups = "drop") %>% 
   ggplot(aes(x = help_requested, y = kapacita_kat)) +
   geom_col() +
   theme_uo("x", multiplot = T, legend.position = "bottom") +
@@ -56,7 +57,8 @@ mdf_with_at_mark_flat %>%
                                 `Střední školy` = "C00", 
                                 `Základní školy` = "B00")) %>% 
   group_by(obec_pocobyv_kat, skola_typ) %>% 
-  summarise(help_requested = mean(help_requested, na.rm = T)) %>% 
+  summarise(help_requested = mean(help_requested, na.rm = T), 
+            .groups = "drop") %>% 
   ggplot(aes(x = help_requested, y = obec_pocobyv_kat)) +
   geom_col() +
   theme_uo("x", multiplot = T, legend.position = "bottom") +
@@ -75,7 +77,8 @@ mdf_with_at_mark_flat %>%
                                 `Střední školy` = "C00", 
                                 `Základní školy` = "B00")) %>% 
   group_by(okres_kod, skola_typ) %>% 
-  summarise(help_requested = mean(help_requested, na.rm = T)) %>% 
+  summarise(help_requested = mean(help_requested, na.rm = T), 
+            .groups = "drop") %>% 
   left_join(g_poly_okresy) %>% 
   st_as_sf() %>% 
   ggplot(aes(fill = help_requested)) +
@@ -101,12 +104,12 @@ mdf_with_at_mark_flat %>%
                                         "Není na seznamu\nprioritních škol") %>% 
            fct_relevel("Není na seznamu\nprioritních škol", after = 0L)) %>% 
   group_by(csi_priorita, skola_typ) %>% 
-  summarise(help_requested = mean(help_requested, na.rm = T)) %>% 
+  summarise(help_requested = mean(help_requested, na.rm = T), 
+            .groups = "drop") %>% 
   ggplot(aes(y = csi_priorita, x = help_requested)) +
   geom_col() +
   facet_wrap(~skola_typ) +
   scale_x_percent_cz(expand = flush_axis) +
-  labs(title = "Podíl") +
   theme_uo("x", multiplot = T)
 
 ```
@@ -125,7 +128,8 @@ mdf_with_at_mark_flat %>%
            fct_rev()) %>% 
   drop_na(google_or_ms) %>% 
   group_by(skola_typ, google_or_ms) %>% 
-  summarise(help_requested = mean(help_requested, na.rm = T)) %>% 
+  summarise(help_requested = mean(help_requested, na.rm = T), 
+            .groups = "drop") %>% 
   ggplot(aes(y = google_or_ms, x = help_requested)) +
   geom_col() +
   facet_wrap(~skola_typ) +
@@ -184,7 +188,19 @@ gg_at_podil_csi
 
 ## Technologická mapa {.tabset}
 
-### Podle velikosti obce
+### Stav 2020 a 2021
+
+```{r techmapa-shift-parallel, fig.height=3}
+targets::tar_read(tp_posun_plt_diffindif)
+```
+
+### Adopce technologií
+
+```{r techmapa-shift-dotplot, fig.height=2}
+targets::tar_read(tp_posun_plt_shift)
+```
+
+### 2020 Podle velikosti obce
 
 ```{r techmapa-velobce-make}
 tm_obec_pocobyv <- mdf_with_at_mark_flat %>% 
@@ -193,7 +209,8 @@ tm_obec_pocobyv <- mdf_with_at_mark_flat %>%
   summarise(csi = mean(has_tech_selected, na.rm = T),
             google_or_ms = mean(dns_gsuite | dns_o365,
                                 na.rm = TRUE),
-            cnt = n()) %>% 
+            cnt = n(), 
+            .groups = "drop") %>% 
   drop_na(obec_pocobyv_kat) %>% 
   ggplot(aes(x = google_or_ms, y = obec_pocobyv_kat)) +
   scale_x_percent_cz(expand = flush_axis) +
@@ -209,7 +226,7 @@ tm_obec_pocobyv
 ```
 
 
-### Podle okresu
+### 2020 podle okresu
 
 ```{r techmapa-okres-make}
 tm_okres <- crossing(skola_druh_nazev = unique(mdf_with_at_mark_flat$skola_druh_nazev),
