@@ -190,19 +190,19 @@ gg_at_podil_csi
 
 ### Stav 2020 a 2021
 
-```{r techmapa-shift-parallel, fig.height=3}
+```{r techmapa-shift-parallel, fig.height=3, dev='ragg_png'}
 targets::tar_read(tp_posun_plt_diffindif)
 ```
 
 ### Adopce technologií
 
-```{r techmapa-shift-dotplot, fig.height=2}
+```{r techmapa-shift-dotplot, fig.height=2, dev='ragg_png'}
 targets::tar_read(tp_posun_plt_shift)
 ```
 
 ### 2020 Podle velikosti obce
 
-```{r techmapa-velobce-make}
+```{r techmapa-velobce-make, dev='ragg_png'}
 tm_obec_pocobyv <- mdf_with_at_mark_flat %>% 
   group_by(obec_pocobyv_kat, skola_druh_nazev) %>% 
   filter(skola_druh_nazev %in% c("Střední škola", "Základní škola")) %>% 
